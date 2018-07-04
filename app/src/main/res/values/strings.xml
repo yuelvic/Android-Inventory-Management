@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Inventory Management</string>
+
+    <string name="text_drawer_admin">Admin</string>
+    <string name="text_drawer_employee">Employee</string>
+    <string name="text_drawer_settings">Settings</string>
 </resources>

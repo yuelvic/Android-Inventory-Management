@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_admin"
+        android:icon="@drawable/ic_admin"
+        android:title="@string/text_drawer_admin" />
+    <item
+        android:id="@+id/nav_employee"
+        android:icon="@drawable/ic_employee"
+        android:title="@string/text_drawer_employee" />
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/text_drawer_settings" />
+</menu>
