@@ -1,14 +1,15 @@
 package io.chaman.im.ui.main
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProviders
+import io.chaman.im.BaseFragment
 import io.chaman.im.R
+import kotlinx.android.synthetic.main.main_fragment.*
 
-class MainFragment : Fragment() {
+class MainFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = MainFragment()
@@ -21,10 +22,15 @@ class MainFragment : Fragment() {
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun configureViewModel() {
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    override fun configureBehavior() {
+        this.tileAdminItems.setOnClickListener {
+            navigate(R.id.action_mainFragment_to_itemFragment)
+        }
     }
 
 }

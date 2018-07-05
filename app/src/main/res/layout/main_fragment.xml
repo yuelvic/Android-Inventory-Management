@@ -8,7 +8,7 @@
     tools:context=".ui.main.MainFragment">
 
     <io.chaman.im.ui.custom.TileButton
-        android:id="@+id/tileButton6"
+        android:id="@+id/tileAdminItems"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -30,7 +30,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tileButton6"
+        app:layout_constraintStart_toEndOf="@+id/tileAdminItems"
         app:layout_constraintTop_toTopOf="parent"
         app:tileIcon="@drawable/ic_report"
         app:tileTitle="Reports" />
@@ -39,9 +39,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/tileButton6"
-        app:layout_constraintStart_toStartOf="@+id/tileButton6"
-        app:layout_constraintTop_toBottomOf="@+id/tileButton6"
+        app:layout_constraintEnd_toEndOf="@+id/tileAdminItems"
+        app:layout_constraintStart_toStartOf="@+id/tileAdminItems"
+        app:layout_constraintTop_toBottomOf="@+id/tileAdminItems"
         app:tileIcon="@drawable/ic_group"
         app:tileTitle="Employee" />
 

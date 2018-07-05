@@ -2,7 +2,7 @@
 <navigation xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/mainActivity">
+    app:startDestination="@id/mainFragment">
     <activity
         android:id="@+id/mainActivity"
         android:name="io.chaman.im.MainActivity"
@@ -10,15 +10,29 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="io.chaman.im.ui.main.MainFragment"
-        android:label="main_fragment"
-        tools:layout="@layout/main_fragment" >
+        android:label="@string/text_drawer_admin"
+        tools:layout="@layout/main_fragment">
         <action
             android:id="@+id/action_mainFragment_to_itemFragment"
-            app:destination="@id/itemFragment" />
+            app:destination="@id/itemFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
     </fragment>
     <fragment
         android:id="@+id/itemFragment"
         android:name="io.chaman.im.ui.item.ItemFragment"
-        android:label="item_fragment"
+        android:label="@string/text_label_item"
         tools:layout="@layout/item_fragment" />
+    <fragment
+        android:id="@+id/employeeFragment"
+        android:name="io.chaman.im.ui.employee.EmployeeFragment"
+        android:label="@string/text_drawer_employee"
+        tools:layout="@layout/employee_fragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="io.chaman.im.ui.settings.SettingsFragment"
+        android:label="@string/text_drawer_settings"
+        tools:layout="@layout/settings_fragment" />
 </navigation>

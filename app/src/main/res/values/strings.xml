@@ -4,4 +4,6 @@
     <string name="text_drawer_admin">Admin</string>
     <string name="text_drawer_employee">Employee</string>
     <string name="text_drawer_settings">Settings</string>
+
+    <string name="text_label_item">Items</string>
 </resources>

@@ -20,6 +20,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -29,7 +32,7 @@ dependencies {
     implementation "androidx.core:core:$appcompatVersion"
     implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-beta01'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0-alpha1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
@@ -39,4 +42,5 @@ dependencies {
 
     implementation 'com.google.android:flexbox:1.0.0'
     implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha02'
+    implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0-alpha02'
 }
