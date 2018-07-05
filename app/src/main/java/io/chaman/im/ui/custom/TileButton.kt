@@ -1,6 +1,7 @@
 package io.chaman.im.ui.custom
 
 import android.content.Context
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,8 @@ import kotlinx.android.synthetic.main.tile_button.view.*
 
 
 class TileButton: ConstraintLayout {
+
+    private val TAG = TileButton::class.java.simpleName
 
     constructor(context: Context) : super(context, null)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs, 0) {
@@ -34,6 +37,7 @@ class TileButton: ConstraintLayout {
                 0, 0)
 
         try {
+            this.tileLayout.setBackgroundColor(a.getColor(R.styleable.TileButton_tileColor, Color.WHITE))
             this.ivTileIcon.setImageDrawable(a.getDrawable(R.styleable.TileButton_tileIcon))
             this.tvTileTitle.text = a.getString(R.styleable.TileButton_tileTitle)
 

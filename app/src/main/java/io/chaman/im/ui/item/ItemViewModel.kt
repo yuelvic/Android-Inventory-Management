@@ -1,7 +1,18 @@
 package io.chaman.im.ui.item
 
-import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import io.chaman.im.data.Item
+import io.chaman.im.data.MockData
 
 class ItemViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+
+    private val itemList = MutableLiveData<List<Item>>()
+
+    init {
+        itemList.postValue(MockData.provideItems())
+    }
+
+    fun getItems() = itemList
+
 }

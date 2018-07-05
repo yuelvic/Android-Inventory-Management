@@ -6,10 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import io.chaman.im.BaseFragment
 import io.chaman.im.R
+import io.chaman.im.adapters.ItemAdapter
+import kotlinx.android.synthetic.main.item_fragment.*
 
 
-class ItemFragment : Fragment() {
+class ItemFragment : BaseFragment() {
+
+    private lateinit var mItemAdapter: ItemAdapter
 
     companion object {
         fun newInstance() = ItemFragment()
@@ -22,10 +29,23 @@ class ItemFragment : Fragment() {
         return inflater.inflate(R.layout.item_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun configureViewModel() {
         viewModel = ViewModelProviders.of(this).get(ItemViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel.getItems().observe(this, Observer {
+            if (it != null) {
+                mItemAdapter.setItems(it)
+            }
+        })
+    }
+
+    override fun configureUI() {
+        this.mItemAdapter = ItemAdapter(context)
+        this.rvItem.adapter = this.mItemAdapter
+        this.rvItem.layoutManager = LinearLayoutManager(context)
+    }
+
+    override fun configureBehavior() {
+        super.configureBehavior()
     }
 
 }
