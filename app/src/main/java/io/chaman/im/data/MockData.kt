@@ -19,6 +19,22 @@ class MockData {
             return items
         }
 
+        fun provideEmployees(): List<Employee> {
+            val employees = ArrayList<Employee>()
+
+            for (i in 1..10) {
+                var employee = Employee()
+                employee.employeeNumber = i
+                employee.firstName = "John"
+                employee.lastName = "Doe"
+                employee.department = "Business Administration"
+                employee.imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSexIAm6UsLd1QXeR9AV3IPROzLLjFb58-FS4BapCZVfHbDRJunfw"
+                employees += employee
+            }
+
+            return employees
+        }
+
     }
 
 }
