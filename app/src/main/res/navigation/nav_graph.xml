@@ -52,7 +52,16 @@
         android:label="AddItemActivity" />
     <fragment
         android:id="@+id/employeeFragment"
-        android:name="io.chaman.im.EmployeeFragment"
+        android:name="io.chaman.im.ui.employee.EmployeeFragment"
         android:label="@string/text_label_employee"
-        tools:layout="@layout/employee_fragment" />
+        tools:layout="@layout/employee_fragment" >
+        <action
+            android:id="@+id/action_employeeFragment_to_addEmployeeActivity"
+            app:destination="@id/addEmployeeActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/addEmployeeActivity"
+        android:name="io.chaman.im.AddEmployeeActivity"
+        android:label="add_employee_activity"
+        tools:layout="@layout/add_employee_activity" />
 </navigation>

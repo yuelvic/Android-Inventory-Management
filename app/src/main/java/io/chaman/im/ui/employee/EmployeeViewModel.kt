@@ -1,4 +1,4 @@
-package io.chaman.im
+package io.chaman.im.ui.employee
 
 import androidx.lifecycle.ViewModel;
 

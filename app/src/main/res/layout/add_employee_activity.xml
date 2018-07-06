@@ -9,7 +9,7 @@
     android:focusableInTouchMode="true">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/itemToolbar"
+        android:id="@+id/employeeToolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:theme="@style/Toolbar"
@@ -18,14 +18,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <fragment
-        android:id="@+id/item_container"
-        android:layout_width="match_parent"
+        android:id="@+id/employee_container"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemToolbar"
+        app:layout_constraintTop_toBottomOf="@+id/employeeToolbar"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        app:navGraph="@navigation/nav_item_graph"/>
+        app:navGraph="@navigation/nav_employee_graph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

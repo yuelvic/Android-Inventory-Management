@@ -1,13 +1,13 @@
 package io.chaman.im
 
 import android.os.Bundle
-import kotlinx.android.synthetic.main.add_item_activity.*
+import kotlinx.android.synthetic.main.add_employee_activity.*
 
-class AddItemActivity : BaseActivity() {
+class AddEmployeeActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.add_item_activity)
+        setContentView(R.layout.add_employee_activity)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -16,11 +16,7 @@ class AddItemActivity : BaseActivity() {
     }
 
     override fun configureUI() {
-        setToolbarAsSecondary(this.itemToolbar)
-    }
-
-    override fun configureBehavior() {
-        super.configureBehavior()
+        setToolbarAsSecondary(this.employeeToolbar)
     }
 
 }

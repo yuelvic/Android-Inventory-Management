@@ -1,13 +1,10 @@
 package io.chaman.im.ui.item
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
@@ -29,7 +26,13 @@ class ItemFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        setHasOptionsMenu(true)
         return configureDataBinding(inflater, container)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
+        inflater.inflate(R.menu.search_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     private fun configureDataBinding(inflater: LayoutInflater, container: ViewGroup?): View? {

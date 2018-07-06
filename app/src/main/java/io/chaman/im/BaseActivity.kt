@@ -2,6 +2,7 @@ package io.chaman.im
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
 open class BaseActivity: AppCompatActivity() {
 
@@ -19,6 +20,13 @@ open class BaseActivity: AppCompatActivity() {
 
     open fun configureViewModel() {
 
+    }
+
+    protected fun setToolbarAsSecondary(toolbar: Toolbar) {
+        setSupportActionBar(toolbar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
