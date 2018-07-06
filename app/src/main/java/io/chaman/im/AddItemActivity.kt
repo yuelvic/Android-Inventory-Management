@@ -1,19 +1,30 @@
 package io.chaman.im
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import io.chaman.im.ui.item.AddItemFragment
+import kotlinx.android.synthetic.main.add_item_activity.*
 
-class AddItemActivity : AppCompatActivity() {
+class AddItemActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_item_activity)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, AddItemFragment.newInstance())
-                    .commitNow()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
+    override fun configureUI() {
+        setSupportActionBar(this.itemToolbar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayHomeAsUpEnabled(true)
         }
+    }
+
+    override fun configureBehavior() {
+        super.configureBehavior()
     }
 
 }

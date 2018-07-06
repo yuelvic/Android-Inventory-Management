@@ -1,14 +1,14 @@
 package io.chaman.im.ui.item
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProviders
+import io.chaman.im.BaseFragment
 import io.chaman.im.R
 
-class AddItemFragment : Fragment() {
+class AddItemFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = AddItemFragment()

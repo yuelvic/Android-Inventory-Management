@@ -6,4 +6,10 @@
     <string name="text_drawer_settings">Settings</string>
 
     <string name="text_label_item">Items</string>
+    <string name="text_label_add_item">Add Item</string>
+
+    <string name="hint_item_name">Name</string>
+    <string name="hint_item_barcode">Barcode</string>
+    <string name="hint_item_description">Description</string>
+    <string name="hint_item_quantity">Quantity</string>
 </resources>

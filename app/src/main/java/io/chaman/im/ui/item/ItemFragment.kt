@@ -53,7 +53,9 @@ class ItemFragment : BaseFragment() {
     }
 
     override fun configureBehavior() {
-        super.configureBehavior()
+        this.fabItem.setOnClickListener {
+            navigate(R.id.action_itemFragment_to_addItemActivity)
+        }
     }
 
 }
