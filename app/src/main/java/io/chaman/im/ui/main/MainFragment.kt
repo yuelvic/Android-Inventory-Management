@@ -31,6 +31,10 @@ class MainFragment : BaseFragment() {
         this.tileAdminItems.setOnClickListener {
             navigate(R.id.action_mainFragment_to_itemFragment)
         }
+
+        this.tileAdminEmployee.setOnClickListener {
+            navigate(R.id.action_mainFragment_to_employeeFragment)
+        }
     }
 
 }

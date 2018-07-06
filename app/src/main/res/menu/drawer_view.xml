@@ -5,9 +5,9 @@
         android:icon="@drawable/ic_admin"
         android:title="@string/text_drawer_admin" />
     <item
-        android:id="@+id/employeeFragment"
+        android:id="@+id/issueFragment"
         android:icon="@drawable/ic_employee"
-        android:title="@string/text_drawer_employee" />
+        android:title="@string/text_drawer_issue" />
     <item
         android:id="@+id/settingsFragment"
         android:icon="@drawable/ic_settings"

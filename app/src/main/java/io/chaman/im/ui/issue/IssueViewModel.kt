@@ -1,7 +1,7 @@
-package io.chaman.im.ui.employee
+package io.chaman.im.ui.issue
 
 import androidx.lifecycle.ViewModel;
 
-class EmployeeViewModel : ViewModel() {
+class IssueViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

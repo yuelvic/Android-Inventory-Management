@@ -1,4 +1,4 @@
-package io.chaman.im.ui.employee
+package io.chaman.im
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import io.chaman.im.R
 
 
 class EmployeeFragment : Fragment() {

@@ -38,6 +38,7 @@
         app:tileTitle="Reports" />
 
     <io.chaman.im.ui.custom.TileButton
+        android:id="@+id/tileAdminEmployee"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
