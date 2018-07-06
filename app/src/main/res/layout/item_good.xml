@@ -15,7 +15,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/ivItemImage"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_marginStart="16dp"
@@ -34,8 +34,8 @@
             android:text="@{item.name}"
             android:textColor="@color/colorAccent"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+            app:layout_constraintStart_toEndOf="@+id/ivItemImage"
+            app:layout_constraintTop_toTopOf="@+id/ivItemImage" />
 
         <TextView
             android:id="@+id/textView2"
@@ -45,7 +45,7 @@
             android:layout_marginTop="4dp"
             android:text="@{item.barCode}"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/ivItemImage"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
@@ -54,9 +54,9 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:text="10"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintBottom_toBottomOf="@+id/ivItemImage"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+            app:layout_constraintTop_toTopOf="@+id/ivItemImage" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

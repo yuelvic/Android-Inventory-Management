@@ -6,16 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
 import io.chaman.im.adapters.ItemAdapter
+import io.chaman.im.databinding.ItemFragmentBinding
 import kotlinx.android.synthetic.main.item_fragment.*
 
 
 class ItemFragment : BaseFragment() {
 
+    private lateinit var binding: ItemFragmentBinding
     private lateinit var mItemAdapter: ItemAdapter
 
     companion object {
@@ -26,7 +29,12 @@ class ItemFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.item_fragment, container, false)
+        return configureDataBinding(inflater, container)
+    }
+
+    private fun configureDataBinding(inflater: LayoutInflater, container: ViewGroup?): View? {
+        this.binding = DataBindingUtil.inflate(inflater, R.layout.item_fragment, container, false)
+        return binding.root
     }
 
     override fun configureViewModel() {
@@ -39,7 +47,7 @@ class ItemFragment : BaseFragment() {
     }
 
     override fun configureUI() {
-        this.mItemAdapter = ItemAdapter(context)
+        this.mItemAdapter = ItemAdapter(this.context!!)
         this.rvItem.adapter = this.mItemAdapter
         this.rvItem.layoutManager = LinearLayoutManager(context)
     }

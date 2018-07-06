@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import io.chaman.im.R
 import io.chaman.im.data.Item
 import io.chaman.im.databinding.ItemGoodBinding
 
-class ItemAdapter(val context: Context?): RecyclerView.Adapter<ItemAdapter.ItemHolder>() {
+class ItemAdapter(val context: Context): RecyclerView.Adapter<ItemAdapter.ItemHolder>() {
 
     private var dataSet = ArrayList<Item>()
 
@@ -24,6 +26,12 @@ class ItemAdapter(val context: Context?): RecyclerView.Adapter<ItemAdapter.ItemH
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
         val data = this.dataSet[position]
+
+        Glide.with(context)
+                .load(data.imageUrl)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(holder.ivItemImage)
+
         holder.apply {
             bind(data)
             itemView.tag = data
@@ -36,6 +44,8 @@ class ItemAdapter(val context: Context?): RecyclerView.Adapter<ItemAdapter.ItemH
     }
 
     class ItemHolder(private val binding: ItemGoodBinding): RecyclerView.ViewHolder(binding.root) {
+
+        val ivItemImage = binding.ivItemImage
 
         fun bind(data: Item) {
             this.binding.apply {

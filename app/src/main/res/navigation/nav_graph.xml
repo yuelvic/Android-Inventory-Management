@@ -24,7 +24,11 @@
         android:id="@+id/itemFragment"
         android:name="io.chaman.im.ui.item.ItemFragment"
         android:label="@string/text_label_item"
-        tools:layout="@layout/item_fragment" />
+        tools:layout="@layout/item_fragment" >
+        <action
+            android:id="@+id/action_itemFragment_to_addItemActivity"
+            app:destination="@id/addItemActivity" />
+    </fragment>
     <fragment
         android:id="@+id/employeeFragment"
         android:name="io.chaman.im.ui.employee.EmployeeFragment"
@@ -35,4 +39,8 @@
         android:name="io.chaman.im.ui.settings.SettingsFragment"
         android:label="@string/text_drawer_settings"
         tools:layout="@layout/settings_fragment" />
+    <activity
+        android:id="@+id/addItemActivity"
+        android:name="io.chaman.im.AddItemActivity"
+        android:label="AddItemActivity" />
 </navigation>
