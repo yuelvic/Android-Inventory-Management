@@ -6,13 +6,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
 import io.chaman.im.adapters.EmployeeAdapter
 import io.chaman.im.databinding.EmployeeFragmentBinding
 import kotlinx.android.synthetic.main.employee_fragment.*
-import kotlinx.android.synthetic.main.item_fragment.*
 
 
 class EmployeeFragment : BaseFragment() {
@@ -33,7 +31,7 @@ class EmployeeFragment : BaseFragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
-        inflater.inflate(R.menu.search_menu, menu)
+        inflater.inflate(R.menu.search_employee_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 

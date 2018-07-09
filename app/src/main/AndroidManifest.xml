@@ -30,7 +30,8 @@
         <activity
             android:name=".AddEmployeeActivity"
             android:label="@string/text_label_add_employee" />
-        <activity android:name=".EmployeeDetailsActivity"></activity>
+        <activity android:name=".EmployeeDetailsActivity" />
+        <activity android:name=".SupplyActivity"></activity>
     </application>
 
 </manifest>

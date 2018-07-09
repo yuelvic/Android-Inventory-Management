@@ -31,7 +31,7 @@ class ItemFragment : BaseFragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
-        inflater.inflate(R.menu.search_menu, menu)
+        inflater.inflate(R.menu.search_item_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 

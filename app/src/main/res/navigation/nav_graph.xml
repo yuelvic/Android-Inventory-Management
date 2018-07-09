@@ -47,7 +47,11 @@
         android:id="@+id/issueFragment"
         android:name="io.chaman.im.ui.issue.IssueFragment"
         android:label="@string/text_drawer_issue"
-        tools:layout="@layout/issue_fragment" />
+        tools:layout="@layout/issue_fragment" >
+        <action
+            android:id="@+id/action_issueFragment_to_supplyActivity"
+            app:destination="@id/supplyActivity" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="io.chaman.im.ui.settings.SettingsFragment"
@@ -83,4 +87,9 @@
         android:id="@+id/reportsFragment"
         android:name="io.chaman.im.ui.report.ReportsFragment"
         android:label="@string/text_label_reports" />
+    <activity
+        android:id="@+id/supplyActivity"
+        android:name="io.chaman.im.SupplyActivity"
+        android:label="supply_activity"
+        tools:layout="@layout/supply_activity" />
 </navigation>
