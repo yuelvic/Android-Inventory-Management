@@ -55,4 +55,10 @@ class SupplyFragment : BaseFragment() {
                 .into(this.ivSupplyImage)
     }
 
+    override fun configureBehavior() {
+        this.tvSupplyEmployee.setOnClickListener {
+
+        }
+    }
+
 }

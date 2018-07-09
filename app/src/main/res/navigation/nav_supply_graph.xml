@@ -6,5 +6,5 @@
     <fragment
         android:id="@+id/supplyFragment"
         android:name="io.chaman.im.ui.item.SupplyFragment"
-        android:label="SupplyFragment" />
+        android:label="SupplyFragment" ></fragment>
 </navigation>
