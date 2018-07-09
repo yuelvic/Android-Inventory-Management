@@ -5,4 +5,10 @@
         <attr name="tileTitle" format="string"/>
         <attr name="tileColor" format="integer"/>
     </declare-styleable>
+
+    <declare-styleable name="TileReport">
+        <attr name="tileReportLineColor" format="integer"/>
+        <attr name="tileReportTitle" format="string"/>
+        <attr name="tileReportValue" format="integer"/>
+    </declare-styleable>
 </resources>

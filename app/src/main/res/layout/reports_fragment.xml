@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data></data>
 
@@ -9,7 +10,49 @@
         android:layout_height="match_parent">
 
 
+        <io.chaman.im.ui.custom.TileReport
+            android:id="@+id/tileReport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tileReportLineColor="@color/color_flat_turquoise"
+            app:tileReportTitle="Total Supplies"
+            app:tileReportValue="183" />
 
+        <io.chaman.im.ui.custom.TileReport
+            android:id="@+id/tileReport2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/tileReport3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tileReport"
+            app:tileReportLineColor="@color/color_flat_peterriver"
+            app:tileReportTitle="Total Issuances"
+            app:tileReportValue="24" />
+
+        <io.chaman.im.ui.custom.TileReport
+            android:id="@+id/tileReport3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tileReport2"
+            app:layout_constraintTop_toBottomOf="@+id/tileReport"
+            app:tileReportLineColor="@color/color_flat_carrot"
+            app:tileReportTitle="Total Employees"
+            app:tileReportValue="15" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
