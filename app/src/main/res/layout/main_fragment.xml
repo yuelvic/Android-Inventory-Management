@@ -14,7 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/tileButton5"
+        app:layout_constraintEnd_toStartOf="@+id/tileAdminReports"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,7 +23,7 @@
         app:tileTitle="Items" />
 
     <io.chaman.im.ui.custom.TileButton
-        android:id="@+id/tileButton5"
+        android:id="@+id/tileAdminReports"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"

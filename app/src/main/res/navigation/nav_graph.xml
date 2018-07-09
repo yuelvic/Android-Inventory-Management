@@ -26,6 +26,13 @@
             app:exitAnim="@anim/exit_to_left"
             app:popEnterAnim="@anim/enter_from_left"
             app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_reportsFragment"
+            app:destination="@id/reportsFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
     </fragment>
     <fragment
         android:id="@+id/itemFragment"
@@ -72,4 +79,8 @@
         android:name="io.chaman.im.EmployeeDetailsActivity"
         android:label="employee_details_activity"
         tools:layout="@layout/employee_details_activity" />
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="io.chaman.im.ui.report.ReportsFragment"
+        android:label="@string/text_label_reports" />
 </navigation>

@@ -12,6 +12,7 @@
     <string name="text_label_add_item">Add Item</string>
     <string name="text_label_employee">Employees</string>
     <string name="text_label_add_employee">Add Employee</string>
+    <string name="text_label_reports">Reports</string>
 
     <string name="hint_item_name">Name</string>
     <string name="hint_item_barcode">Barcode</string>
