@@ -6,6 +6,10 @@ import androidx.navigation.Navigation
 
 open class BaseFragment: Fragment() {
 
+    open fun configureBundle() {
+
+    }
+
     open fun configureUI() {
 
     }
@@ -29,9 +33,18 @@ open class BaseFragment: Fragment() {
         }
     }
 
+    /**
+     * Sets toolbar title
+     * @param title Title
+     */
+    protected fun setTitle(title: String) {
+        activity!!.title = title
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         configureViewModel()
+        configureBundle()
         configureUI()
         configureBehavior()
     }

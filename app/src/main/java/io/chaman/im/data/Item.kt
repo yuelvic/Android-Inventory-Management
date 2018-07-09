@@ -4,5 +4,6 @@ data class Item(
         var imageUrl: String = "",
         var name: String = "",
         var barCode: String = "",
-        var quantity: Int = 0
+        var quantity: Int = 0,
+        var description: String = ""
 )
