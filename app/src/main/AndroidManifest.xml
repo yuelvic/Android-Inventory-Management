@@ -27,8 +27,10 @@
         <activity
             android:name=".AddItemActivity"
             android:label="@string/text_label_add_item" />
-        <activity android:name=".AddEmployeeActivity"
-            android:label="@string/text_label_add_employee"/>
+        <activity
+            android:name=".AddEmployeeActivity"
+            android:label="@string/text_label_add_employee" />
+        <activity android:name=".EmployeeDetailsActivity"></activity>
     </application>
 
 </manifest>

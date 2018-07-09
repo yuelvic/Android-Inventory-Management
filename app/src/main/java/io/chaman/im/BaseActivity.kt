@@ -6,6 +6,10 @@ import androidx.appcompat.widget.Toolbar
 
 open class BaseActivity: AppCompatActivity() {
 
+    open fun configureBundle() {
+
+    }
+
     open fun configureUI() {
 
     }
@@ -37,6 +41,7 @@ open class BaseActivity: AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         configureViewModel()
+        configureBundle()
         configureUI()
         configureBehavior()
     }

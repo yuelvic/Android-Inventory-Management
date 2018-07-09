@@ -58,10 +58,18 @@
         <action
             android:id="@+id/action_employeeFragment_to_addEmployeeActivity"
             app:destination="@id/addEmployeeActivity" />
+        <action
+            android:id="@+id/action_employeeFragment_to_employeeDetailsActivity"
+            app:destination="@id/employeeDetailsActivity" />
     </fragment>
     <activity
         android:id="@+id/addEmployeeActivity"
         android:name="io.chaman.im.AddEmployeeActivity"
         android:label="add_employee_activity"
         tools:layout="@layout/add_employee_activity" />
+    <activity
+        android:id="@+id/employeeDetailsActivity"
+        android:name="io.chaman.im.EmployeeDetailsActivity"
+        android:label="employee_details_activity"
+        tools:layout="@layout/employee_details_activity" />
 </navigation>

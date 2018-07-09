@@ -41,9 +41,13 @@ dependencies {
     implementation "androidx.legacy:legacy-support-core-ui:$appcompatVersion"
     implementation "com.google.android.material:material:$appcompatVersion"
 
-    implementation 'com.google.android:flexbox:1.0.0'
     implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha02'
     implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0-alpha02'
+
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.android:flexbox:1.0.0'
+
+    implementation 'androidx.core:core-ktx:1.0.0-beta01'
 
     implementation 'androidx.recyclerview:recyclerview-selection:1.0.0-beta01'
 

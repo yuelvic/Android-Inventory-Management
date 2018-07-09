@@ -26,6 +26,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employeeToolbar"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        app:navGraph="@navigation/nav_employee_graph" />
+        app:navGraph="@navigation/nav_add_employee_graph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

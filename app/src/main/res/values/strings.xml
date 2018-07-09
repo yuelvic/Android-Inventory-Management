@@ -23,7 +23,7 @@
     <string name="hint_employee_lastname">Last Name</string>
 
     <string name="hint_issue_search">Search item</string>
-    
+
     <string-array name="text_department_array">
         <item>Management</item>
         <item>Accounting and Finance</item>

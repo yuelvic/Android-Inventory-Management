@@ -6,6 +6,9 @@
 
     <data>
         <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+        <variable
             name="employee"
             type="io.chaman.im.data.Employee"/>
     </data>
@@ -13,7 +16,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp">
+        android:layout_margin="4dp"
+        android:onClick="@{clickListener}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
