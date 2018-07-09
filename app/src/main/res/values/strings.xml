@@ -14,6 +14,7 @@
     <string name="text_label_employee">Employees</string>
     <string name="text_label_add_employee">Add Employee</string>
     <string name="text_label_reports">Reports</string>
+    <string name="text_label_supply">Get Item</string>
 
     <string name="hint_item_name">Name</string>
     <string name="hint_item_barcode">Barcode</string>
@@ -25,6 +26,7 @@
     <string name="hint_employee_lastname">Last Name</string>
 
     <string name="hint_issue_search">Search item</string>
+    <string name="hint_issue_employee">Select employee</string>
 
     <string-array name="text_department_array">
         <item>Management</item>

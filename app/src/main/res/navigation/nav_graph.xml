@@ -90,6 +90,6 @@
     <activity
         android:id="@+id/supplyActivity"
         android:name="io.chaman.im.SupplyActivity"
-        android:label="supply_activity"
+        android:label="@string/text_label_supply"
         tools:layout="@layout/supply_activity" />
 </navigation>

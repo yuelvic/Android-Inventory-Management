@@ -1,19 +1,22 @@
 package io.chaman.im
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import io.chaman.im.ui.item.SupplyFragment
+import kotlinx.android.synthetic.main.supply_activity.*
 
-class SupplyActivity : AppCompatActivity() {
+class SupplyActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.supply_activity)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, SupplyFragment.newInstance())
-                    .commitNow()
-        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
+    override fun configureUI() {
+        setToolbarAsSecondary(this.supplyToolbar)
     }
 
 }
