@@ -3,6 +3,7 @@ package io.chaman.im
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 open class BaseFragment: Fragment() {
 
@@ -39,6 +40,13 @@ open class BaseFragment: Fragment() {
      */
     protected fun setTitle(title: String) {
         activity!!.title = title
+    }
+
+    protected fun openBottomSheet(resId: Int) {
+        val bottomSheetDialog = BottomSheetDialog(this.activity!!)
+        val sheetView = activity!!.layoutInflater.inflate(resId, null)
+        bottomSheetDialog.setContentView(sheetView)
+        bottomSheetDialog.show()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

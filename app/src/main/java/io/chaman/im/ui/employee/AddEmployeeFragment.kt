@@ -40,4 +40,10 @@ class AddEmployeeFragment : BaseFragment() {
         this.spnEmployeeDepartment.adapter = spinnerAdapter
     }
 
+    override fun configureBehavior() {
+        this.ivEmployeeImage.setOnClickListener {
+            openBottomSheet(R.layout.image_picker)
+        }
+    }
+
 }
