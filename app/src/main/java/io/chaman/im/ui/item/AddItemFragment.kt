@@ -1,10 +1,14 @@
 package io.chaman.im.ui.item
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.*
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.google.gson.Gson
+import com.google.zxing.integration.android.IntentIntegrator
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
 import io.chaman.im.data.entities.Item
@@ -15,6 +19,7 @@ class AddItemFragment : BaseFragment() {
 
     companion object {
         const val ARG_ITEM_ID = "item_id"
+        val TAG = AddItemFragment::class.java.simpleName
 
         fun newInstance() = AddItemFragment()
     }
@@ -32,6 +37,17 @@ class AddItemFragment : BaseFragment() {
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
         inflater.inflate(R.menu.check_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+        if (result != null) {
+            if (result.contents != null) {
+                Log.d(TAG, result.contents)
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
     }
 
     override fun configureViewModel() {
@@ -62,6 +78,10 @@ class AddItemFragment : BaseFragment() {
     }
 
     override fun configureBehavior() {
+        this.ivItemBarcode.setOnClickListener {
+            IntentIntegrator(activity).initiateScan()
+        }
+
         this.ivItemImage.setOnClickListener {
             openImagePicker()
         }
