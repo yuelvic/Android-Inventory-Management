@@ -44,6 +44,7 @@ class EmployeeAdapter(val context: Context?): RecyclerView.Adapter<EmployeeAdapt
     }
 
     fun setEmployees(employees: List<Employee>) {
+        this.dataSet.clear()
         this.dataSet += employees
         notifyDataSetChanged()
     }

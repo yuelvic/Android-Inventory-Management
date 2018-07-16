@@ -1,18 +1,30 @@
 package io.chaman.im.ui.employee
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel;
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import io.chaman.im.data.entities.Employee
-import io.chaman.im.data.MockData
+import io.chaman.im.data.repository.EmployeeRepository
+import io.chaman.im.databinding.AddEmployeeFragmentBinding
 
-class EmployeeViewModel : ViewModel() {
+class EmployeeViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val employeeList = MutableLiveData<List<Employee>>()
+    var mEmployeeRepository: EmployeeRepository = EmployeeRepository(application)
+    lateinit var mEmployees: LiveData<List<Employee>>
 
     init {
-        employeeList.postValue(MockData.provideEmployees())
+        this.mEmployees = this.mEmployeeRepository.getEmployees()
     }
 
-    fun getEmployees() = employeeList
+    fun getEmployees() = this.mEmployees
+
+    fun addEmployee(binding: AddEmployeeFragmentBinding) {
+        val employee = Employee()
+        employee.employeeNumber = Integer.parseInt(binding.etEmployeeNumber.text.toString())
+        employee.firstName = binding.etEmployeeFirst.text.toString()
+        employee.lastName = binding.etEmployeeSecond.text.toString()
+        employee.department = binding.spnEmployeeDepartment.selectedItem.toString()
+        this.mEmployeeRepository.add(employee)
+    }
 
 }

@@ -63,7 +63,7 @@ class AddItemFragment : BaseFragment() {
 
     override fun configureBehavior() {
         this.ivItemImage.setOnClickListener {
-            openBottomSheet(R.layout.image_picker)
+            openImagePicker()
         }
     }
 

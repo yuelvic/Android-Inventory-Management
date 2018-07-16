@@ -24,6 +24,7 @@ class AddEmployeeViewModel(application: Application) : AndroidViewModel(applicat
         employee.firstName = binding.etEmployeeFirst.text.toString()
         employee.lastName = binding.etEmployeeSecond.text.toString()
         employee.department = binding.spnEmployeeDepartment.selectedItem.toString()
+        employee.imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSexIAm6UsLd1QXeR9AV3IPROzLLjFb58-FS4BapCZVfHbDRJunfw"
         this.mEmployeeRepository.add(employee)
     }
 
