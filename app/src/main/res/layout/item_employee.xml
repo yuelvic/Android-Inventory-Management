@@ -10,7 +10,7 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="employee"
-            type="io.chaman.im.data.Employee"/>
+            type="io.chaman.im.data.entities.Employee"/>
     </data>
 
     <androidx.cardview.widget.CardView

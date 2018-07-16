@@ -1,5 +1,8 @@
 package io.chaman.im.data
 
+import io.chaman.im.data.entities.Employee
+import io.chaman.im.data.entities.Item
+
 class MockData {
 
     companion object {

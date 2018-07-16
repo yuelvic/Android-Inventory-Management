@@ -1,4 +1,4 @@
-package io.chaman.im.data
+package io.chaman.im.data.entities
 
 data class Item(
         var imageUrl: String = "",

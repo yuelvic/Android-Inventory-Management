@@ -3,7 +3,7 @@ package io.chaman.im
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
-import io.chaman.im.data.Employee
+import io.chaman.im.data.entities.Employee
 import io.chaman.im.ui.employee.EmployeeDetailsFragment
 import kotlinx.android.synthetic.main.employee_details_activity.*
 

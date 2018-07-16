@@ -10,7 +10,7 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="item"
-            type="io.chaman.im.data.Item"/>
+            type="io.chaman.im.data.entities.Item"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

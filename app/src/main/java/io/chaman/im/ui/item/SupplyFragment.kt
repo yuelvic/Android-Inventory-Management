@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
-import io.chaman.im.data.Item
+import io.chaman.im.data.entities.Item
 import io.chaman.im.databinding.SupplyFragmentBinding
 import kotlinx.android.synthetic.main.supply_fragment.*
 

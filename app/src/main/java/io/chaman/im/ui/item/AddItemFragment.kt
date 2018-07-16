@@ -4,11 +4,10 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.Gson
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
-import io.chaman.im.data.Item
+import io.chaman.im.data.entities.Item
 import io.chaman.im.databinding.AddItemFragmentBinding
 import kotlinx.android.synthetic.main.add_item_fragment.*
 
