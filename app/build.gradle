@@ -65,4 +65,6 @@ dependencies {
 
     implementation 'com.github.esafirm.android-image-picker:imagepicker:1.13.1'
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+
+    implementation 'info.hoang8f:android-segmented:1.0.6'
 }
