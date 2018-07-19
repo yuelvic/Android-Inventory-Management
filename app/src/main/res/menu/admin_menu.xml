@@ -13,10 +13,10 @@
         android:id="@+id/employeeFragment"
         android:icon="@drawable/ic_employee"
         android:title="@string/text_admin_employee" />
-    <!--<item-->
-        <!--android:id="@+id/menu_request"-->
-        <!--android:icon="@drawable/ic_request"-->
-        <!--android:title="@string/text_admin_request" />-->
+    <item
+        android:id="@+id/requestFragment"
+        android:icon="@drawable/ic_request"
+        android:title="@string/text_admin_request" />
     <!--<item-->
         <!--android:icon="@drawable/ic_report"-->
         <!--android:title="@string/text_admin_report" />-->

@@ -92,4 +92,9 @@
         android:name="io.chaman.im.SupplyActivity"
         android:label="@string/text_label_supply"
         tools:layout="@layout/supply_activity" />
+    <fragment
+        android:id="@+id/requestFragment"
+        android:name="io.chaman.im.ui.item.RequestFragment"
+        android:label="@string/text_admin_request"
+        tools:layout="@layout/request_fragment" />
 </navigation>
