@@ -50,6 +50,8 @@ class ItemFragment : BaseFragment() {
     }
 
     override fun configureUI() {
+        setTitle(getString(R.string.text_admin_item))
+
         this.mItemAdapter = ItemAdapter(this.context!!)
         this.rvItem.adapter = this.mItemAdapter
         this.rvItem.layoutManager = LinearLayoutManager(context)

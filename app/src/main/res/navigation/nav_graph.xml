@@ -2,38 +2,38 @@
 <navigation xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/mainFragment">
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="io.chaman.im.MainActivity"
-        android:label="MainActivity" />
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="io.chaman.im.ui.main.MainFragment"
-        android:label="@string/text_drawer_admin"
-        tools:layout="@layout/main_fragment">
-        <action
-            android:id="@+id/action_mainFragment_to_itemFragment"
-            app:destination="@id/itemFragment"
-            app:enterAnim="@anim/enter_from_right"
-            app:exitAnim="@anim/exit_to_left"
-            app:popEnterAnim="@anim/enter_from_left"
-            app:popExitAnim="@anim/exit_to_right" />
-        <action
-            android:id="@+id/action_mainFragment_to_employeeFragment"
-            app:destination="@id/employeeFragment"
-            app:enterAnim="@anim/enter_from_right"
-            app:exitAnim="@anim/exit_to_left"
-            app:popEnterAnim="@anim/enter_from_left"
-            app:popExitAnim="@anim/exit_to_right" />
-        <action
-            android:id="@+id/action_mainFragment_to_reportsFragment"
-            app:destination="@id/reportsFragment"
-            app:enterAnim="@anim/enter_from_right"
-            app:exitAnim="@anim/exit_to_left"
-            app:popEnterAnim="@anim/enter_from_left"
-            app:popExitAnim="@anim/exit_to_right" />
-    </fragment>
+    app:startDestination="@id/reportsFragment">
+    <!--<activity-->
+        <!--android:id="@+id/mainActivity"-->
+        <!--android:name="io.chaman.im.MainActivity"-->
+        <!--android:label="MainActivity" />-->
+    <!--<fragment-->
+        <!--android:id="@+id/mainFragment"-->
+        <!--android:name="io.chaman.im.ui.main.MainFragment"-->
+        <!--android:label="@string/text_drawer_admin"-->
+        <!--tools:layout="@layout/main_fragment">-->
+        <!--<action-->
+            <!--android:id="@+id/action_mainFragment_to_itemFragment"-->
+            <!--app:destination="@id/itemFragment"-->
+            <!--app:enterAnim="@anim/enter_from_right"-->
+            <!--app:exitAnim="@anim/exit_to_left"-->
+            <!--app:popEnterAnim="@anim/enter_from_left"-->
+            <!--app:popExitAnim="@anim/exit_to_right" />-->
+        <!--<action-->
+            <!--android:id="@+id/action_mainFragment_to_employeeFragment"-->
+            <!--app:destination="@id/employeeFragment"-->
+            <!--app:enterAnim="@anim/enter_from_right"-->
+            <!--app:exitAnim="@anim/exit_to_left"-->
+            <!--app:popEnterAnim="@anim/enter_from_left"-->
+            <!--app:popExitAnim="@anim/exit_to_right" />-->
+        <!--<action-->
+            <!--android:id="@+id/action_mainFragment_to_reportsFragment"-->
+            <!--app:destination="@id/reportsFragment"-->
+            <!--app:enterAnim="@anim/enter_from_right"-->
+            <!--app:exitAnim="@anim/exit_to_left"-->
+            <!--app:popEnterAnim="@anim/enter_from_left"-->
+            <!--app:popExitAnim="@anim/exit_to_right" />-->
+    <!--</fragment>-->
     <fragment
         android:id="@+id/itemFragment"
         android:name="io.chaman.im.ui.item.ItemFragment"
@@ -52,11 +52,11 @@
             android:id="@+id/action_issueFragment_to_supplyActivity"
             app:destination="@id/supplyActivity" />
     </fragment>
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="io.chaman.im.ui.settings.SettingsFragment"
-        android:label="@string/text_drawer_settings"
-        tools:layout="@layout/settings_fragment" />
+    <!--<fragment-->
+        <!--android:id="@+id/settingsFragment"-->
+        <!--android:name="io.chaman.im.ui.settings.SettingsFragment"-->
+        <!--android:label="@string/text_drawer_settings"-->
+        <!--tools:layout="@layout/settings_fragment" />-->
     <activity
         android:id="@+id/addItemActivity"
         android:name="io.chaman.im.AddItemActivity"

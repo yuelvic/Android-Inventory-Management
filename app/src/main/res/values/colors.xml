@@ -8,4 +8,6 @@
     <color name="color_flat_peterriver">#3498db</color>
     <color name="color_flat_wetasphalt">#34495e</color>
     <color name="color_flat_carrot">#e67e22</color>
+
+    <color name="color_alpha_black">#8C000000</color>
 </resources>

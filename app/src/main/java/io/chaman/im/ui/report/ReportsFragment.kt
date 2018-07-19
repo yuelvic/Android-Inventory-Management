@@ -35,7 +35,8 @@ class ReportsFragment : BaseFragment(), DatePickerDialog.OnDateSetListener {
     }
 
     override fun configureUI() {
-        showDatePicker()
+        setTitle(getString(R.string.text_admin_dashboard))
+//        showDatePicker()
     }
 
     private fun showDatePicker() {

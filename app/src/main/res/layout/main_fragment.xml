@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,46 +8,25 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment">
 
-    <io.chaman.im.ui.custom.TileButton
-        android:id="@+id/tileAdminItems"
+    <fragment
+        android:id="@+id/admin_container"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/tileAdminReports"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_height="0dp"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationBar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tileColor="@color/color_flat_turquoise"
-        app:tileIcon="@drawable/ic_item"
-        app:tileTitle="Items" />
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"/>
 
-    <io.chaman.im.ui.custom.TileButton
-        android:id="@+id/tileAdminReports"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tileAdminItems"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tileColor="@color/color_flat_peterriver"
-        app:tileIcon="@drawable/ic_report"
-        app:tileTitle="Reports" />
-
-    <io.chaman.im.ui.custom.TileButton
-        android:id="@+id/tileAdminEmployee"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/tileAdminItems"
-        app:layout_constraintStart_toStartOf="@+id/tileAdminItems"
-        app:layout_constraintTop_toBottomOf="@+id/tileAdminItems"
-        app:tileColor="@color/color_flat_wetasphalt"
-        app:tileIcon="@drawable/ic_group"
-        app:tileTitle="Employee" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/admin_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

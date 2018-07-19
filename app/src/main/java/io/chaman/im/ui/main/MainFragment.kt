@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
 import kotlinx.android.synthetic.main.main_fragment.*
@@ -27,18 +29,9 @@ class MainFragment : BaseFragment() {
         // TODO: Use the ViewModel
     }
 
-    override fun configureBehavior() {
-        this.tileAdminItems.setOnClickListener {
-            navigate(R.id.action_mainFragment_to_itemFragment)
-        }
-
-        this.tileAdminEmployee.setOnClickListener {
-            navigate(R.id.action_mainFragment_to_employeeFragment)
-        }
-
-        this.tileAdminReports.setOnClickListener {
-            navigate(R.id.action_mainFragment_to_reportsFragment)
-        }
+    override fun configureUI() {
+        val navController = Navigation.findNavController(this.activity!!, R.id.admin_container)
+        NavigationUI.setupWithNavController(this.bottomNavigationBar, navController)
     }
 
 }

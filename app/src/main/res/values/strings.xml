@@ -5,6 +5,12 @@
     <string name="text_drawer_issue">Issue</string>
     <string name="text_drawer_settings">Settings</string>
 
+    <string name="text_admin_dashboard">Dashboard</string>
+    <string name="text_admin_item">Supplies</string>
+    <string name="text_admin_employee">Employees</string>
+    <string name="text_admin_report">Reports</string>
+    <string name="text_admin_request">Requests</string>
+
     <string name="text_image_camera">Camera</string>
     <string name="text_image_gallery">Gallery</string>
 
