@@ -25,5 +25,7 @@ data class Request(
         @ColumnInfo(name = "price")
         var price: Double = 0.0,
         @ColumnInfo(name = "extended_price")
-        var extendedPrice: Double = 0.0
+        var extendedPrice: Double = 0.0,
+        @ColumnInfo(name = "image_url")
+        var imageUrl: String = ""
 )
