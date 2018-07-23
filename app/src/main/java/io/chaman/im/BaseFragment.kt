@@ -60,6 +60,10 @@ open class BaseFragment: Fragment() {
                 .start()
     }
 
+    protected fun saveState() {
+
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         configureViewModel()

@@ -15,6 +15,7 @@ import io.chaman.im.R
 import io.chaman.im.data.entities.Request
 import io.chaman.im.databinding.ItemRequestBinding
 import io.chaman.im.ui.item.AddItemFragment
+import io.chaman.im.utils.ImageUtils
 
 class RequestAdapter(val context: Context?): RecyclerView.Adapter<RequestAdapter.RequestHolder>() {
 
@@ -33,6 +34,7 @@ class RequestAdapter(val context: Context?): RecyclerView.Adapter<RequestAdapter
         val data = dataSet[position]
 
         Glide.with(this.context!!)
+                .setDefaultRequestOptions(ImageUtils.getRequestConfig(R.drawable.ic_item, R.drawable.ic_item))
                 .load(data.imageUrl)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(holder.ivRequestImage)

@@ -40,6 +40,10 @@ class TileReport: ConstraintLayout {
             this.tileReportLine.setBackgroundColor(a.getColor(R.styleable.TileReport_tileReportLineColor, Color.WHITE))
             this.tvTileReportTitle.text = a.getString(R.styleable.TileReport_tileReportTitle)
             this.tvTileReportValue.text = a.getString(R.styleable.TileReport_tileReportValue)
+        } catch (e: Exception) {
+            this.tileReportLine.setBackgroundColor(a.getColor(R.styleable.TileReport_tileReportLineColor, Color.WHITE))
+            this.tvTileReportTitle.text = "Title"
+            this.tvTileReportValue.text = "0"
         } finally {
             a.recycle()
         }

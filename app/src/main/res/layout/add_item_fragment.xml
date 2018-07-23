@@ -33,8 +33,9 @@
                 android:text="@{item.name}"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/tileItemQuantity" />
 
             <ImageView
                 android:id="@+id/ivItemBarcode"
@@ -105,7 +106,8 @@
                 android:layout_marginBottom="8dp"
                 android:scaleType="center"
                 android:src="@drawable/ic_add_photo"
-                android:tint="@color/colorPrimary"
+                android:contentDescription="@{item.imageUrl}"
+                app:imageFromUrl="@{item.imageUrl}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -140,6 +142,36 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/etItemSafety"
                 app:layout_constraintTop_toTopOf="@+id/etItemSafety" />
+
+            <io.chaman.im.ui.custom.TileReport
+                android:id="@+id/tileItemQuantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/tileItemPrice"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tileReportLineColor="@color/color_flat_turquoise"
+                app:tileReportTitle="@string/text_item_quantity"
+                app:tileReportValue="0" />
+
+            <io.chaman.im.ui.custom.TileReport
+                android:id="@+id/tileItemPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tileItemQuantity"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tileReportLineColor="@color/color_flat_peterriver"
+                app:tileReportTitle="@string/text_item_price"
+                app:tileReportValue="0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -3,6 +3,8 @@ package io.chaman.im
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import com.esafirm.imagepicker.features.ImagePicker
+import com.esafirm.imagepicker.model.Image
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.add_item_activity.*
 
@@ -16,13 +18,18 @@ class AddItemActivity : BaseActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-        if (result != null) {
-            if (result.contents != null) {
-                Log.d(TAG, result.contents)
-            }
+        if (ImagePicker.shouldHandle(requestCode, resultCode, data)) {
+            val image = ImagePicker.getFirstImageOrNull(data)
+            Log.d(TAG, image.path)
         } else {
-            super.onActivityResult(requestCode, resultCode, data)
+            val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+            if (result != null) {
+                if (result.contents != null) {
+                    Log.d(TAG, result.contents)
+                }
+            } else {
+                super.onActivityResult(requestCode, resultCode, data)
+            }
         }
     }
 

@@ -25,6 +25,7 @@ class RequestViewModel(application: Application) : AndroidViewModel(application)
         request.safetyStock = Integer.parseInt(binding.etItemSafety.text.toString())
         request.price = Integer.parseInt(binding.etItemQuantity.text.toString()) *
                 Integer.parseInt(binding.etItemPrice.text.toString()) + .0
+        request.imageUrl = binding.ivItemImage.contentDescription.toString()
         this.mRequestRepository.add(request)
     }
 

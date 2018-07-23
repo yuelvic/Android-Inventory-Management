@@ -25,6 +25,9 @@
     <string name="text_label_reports">Reports</string>
     <string name="text_label_supply">Get Item</string>
 
+    <string name="text_item_quantity">Remaining Items</string>
+    <string name="text_item_price">Total Price</string>
+
     <string name="hint_item_name">Name</string>
     <string name="hint_item_barcode">Barcode</string>
     <string name="hint_item_description">Description</string>

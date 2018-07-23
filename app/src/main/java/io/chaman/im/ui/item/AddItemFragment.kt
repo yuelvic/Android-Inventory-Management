@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.esafirm.imagepicker.features.ImagePicker
 import com.google.gson.Gson
 import com.google.zxing.integration.android.IntentIntegrator
 import io.chaman.im.BaseFragment
@@ -53,13 +54,19 @@ class AddItemFragment : BaseFragment() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-        if (result != null) {
-            if (result.contents != null) {
-                Log.d(TAG, result.contents)
-            }
+        if (ImagePicker.shouldHandle(requestCode, resultCode, data)) {
+            val image = ImagePicker.getFirstImageOrNull(data)
+            this.mItem.imageUrl = image.path
+            this.mBinding.item = this.mItem
         } else {
-            super.onActivityResult(requestCode, resultCode, data)
+            val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+            if (result != null) {
+                if (result.contents != null) {
+                    Log.d(TAG, result.contents)
+                }
+            } else {
+                super.onActivityResult(requestCode, resultCode, data)
+            }
         }
     }
 

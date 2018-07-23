@@ -9,7 +9,7 @@
     <declare-styleable name="TileReport">
         <attr name="tileReportLineColor" format="integer"/>
         <attr name="tileReportTitle" format="string"/>
-        <attr name="tileReportValue" format="integer"/>
+        <attr name="tileReportValue" format="string"/>
     </declare-styleable>
 
     <declare-styleable name="CounterView">
