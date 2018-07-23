@@ -4,9 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.esafirm.imagepicker.features.ImagePicker
-import com.esafirm.imagepicker.model.Image
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import io.chaman.im.ui.custom.ImagePickerBottomSheet
 
 open class BaseFragment: Fragment() {
 
@@ -58,10 +56,6 @@ open class BaseFragment: Fragment() {
                 .limit(1)
                 .includeVideo(false)
                 .start()
-    }
-
-    protected fun saveState() {
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
