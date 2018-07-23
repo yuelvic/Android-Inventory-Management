@@ -96,5 +96,9 @@
         android:id="@+id/requestFragment"
         android:name="io.chaman.im.ui.item.RequestFragment"
         android:label="@string/text_admin_request"
-        tools:layout="@layout/request_fragment" />
+        tools:layout="@layout/request_fragment" >
+        <action
+            android:id="@+id/action_requestFragment_to_addItemActivity"
+            app:destination="@id/addItemActivity" />
+    </fragment>
 </navigation>

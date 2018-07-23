@@ -9,8 +9,8 @@ import org.jetbrains.anko.doAsync
 
 class EmployeeRepository(application: Application) {
 
-    lateinit var mEmployeeDao: EmployeeDao
-    lateinit var mEmployees: LiveData<List<Employee>>
+    var mEmployeeDao: EmployeeDao
+    var mEmployees: LiveData<List<Employee>>
 
     init {
         val db = EmployeeDatabase.getDatabase(application)

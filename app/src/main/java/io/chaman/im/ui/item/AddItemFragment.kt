@@ -7,6 +7,8 @@ import android.view.*
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import com.google.gson.Gson
 import com.google.zxing.integration.android.IntentIntegrator
 import io.chaman.im.BaseFragment
@@ -24,7 +26,7 @@ class AddItemFragment : BaseFragment() {
         fun newInstance() = AddItemFragment()
     }
 
-    private lateinit var viewModel: AddItemViewModel
+    private lateinit var viewModel: RequestViewModel
     private lateinit var mBinding: AddItemFragmentBinding
     private var mItem = Item()
 
@@ -39,6 +41,17 @@ class AddItemFragment : BaseFragment() {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.check -> {
+                this.viewModel.addRequest(this.mBinding)
+                activity!!.finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         if (result != null) {
@@ -51,7 +64,7 @@ class AddItemFragment : BaseFragment() {
     }
 
     override fun configureViewModel() {
-        viewModel = ViewModelProviders.of(this).get(AddItemViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(RequestViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

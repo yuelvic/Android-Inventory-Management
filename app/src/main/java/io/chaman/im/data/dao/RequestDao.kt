@@ -11,7 +11,7 @@ import io.chaman.im.data.entities.Request
 interface RequestDao {
 
     @Query("SELECT * FROM request")
-    fun getEmployees(): LiveData<List<Request>>
+    fun getRequests(): LiveData<List<Request>>
 
     @Insert
     fun add(request: Request)

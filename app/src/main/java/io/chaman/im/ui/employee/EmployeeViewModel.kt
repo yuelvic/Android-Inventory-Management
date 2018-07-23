@@ -10,7 +10,7 @@ import io.chaman.im.databinding.AddEmployeeFragmentBinding
 class EmployeeViewModel(application: Application) : AndroidViewModel(application) {
 
     var mEmployeeRepository: EmployeeRepository = EmployeeRepository(application)
-    lateinit var mEmployees: LiveData<List<Employee>>
+    var mEmployees: LiveData<List<Employee>>
 
     init {
         this.mEmployees = this.mEmployeeRepository.getEmployees()

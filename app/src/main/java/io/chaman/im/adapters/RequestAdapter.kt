@@ -13,16 +13,16 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.gson.Gson
 import io.chaman.im.R
 import io.chaman.im.data.entities.Request
-import io.chaman.im.databinding.ItemGoodBinding
+import io.chaman.im.databinding.ItemRequestBinding
 import io.chaman.im.ui.item.AddItemFragment
 
-class RequestAdapter(val context: Context): RecyclerView.Adapter<RequestAdapter.RequestHolder>() {
+class RequestAdapter(val context: Context?): RecyclerView.Adapter<RequestAdapter.RequestHolder>() {
 
     private var dataSet = ArrayList<Request>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RequestHolder {
         return RequestHolder(DataBindingUtil.inflate(LayoutInflater.from(context),
-                R.layout.item_good, parent, false))
+                R.layout.item_request, parent, false))
     }
 
     override fun getItemCount(): Int {
@@ -32,10 +32,10 @@ class RequestAdapter(val context: Context): RecyclerView.Adapter<RequestAdapter.
     override fun onBindViewHolder(holder: RequestHolder, position: Int) {
         val data = dataSet[position]
 
-        Glide.with(context)
+        Glide.with(this.context!!)
                 .load(data.imageUrl)
                 .transition(DrawableTransitionOptions.withCrossFade())
-                .into(holder.ivItemImage)
+                .into(holder.ivRequestImage)
 
         holder.apply {
             bind(createClickListener(data), data)
@@ -52,16 +52,16 @@ class RequestAdapter(val context: Context): RecyclerView.Adapter<RequestAdapter.
     private fun createClickListener(request: Request): View.OnClickListener {
         val i = Gson().toJson(request)
         val bundle = bundleOf(AddItemFragment.ARG_ITEM_ID to i)
-        return Navigation.createNavigateOnClickListener(R.id.action_itemFragment_to_addItemActivity, bundle)
+        return Navigation.createNavigateOnClickListener(R.id.action_requestFragment_to_addItemActivity, bundle)
     }
 
-    class RequestHolder(private val binding: ItemGoodBinding) : RecyclerView.ViewHolder(binding.root) {
-        val ivItemImage = binding.ivItemImage
+    class RequestHolder(private val binding: ItemRequestBinding) : RecyclerView.ViewHolder(binding.root) {
+        val ivRequestImage = binding.ivRequestImage
 
         fun bind(listener: View.OnClickListener, data: Request) {
             this.binding.apply {
                 clickListener = listener
-//                item = data
+                request = data
                 executePendingBindings()
             }
         }

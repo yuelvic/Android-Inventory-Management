@@ -21,7 +21,7 @@
             tools:context=".ui.item.AddItemFragment">
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/etItemName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -43,12 +43,12 @@
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/ic_barcode"
                 android:tint="@color/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/editText3"
+                app:layout_constraintBottom_toBottomOf="@+id/etItemBarcode"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/editText3" />
+                app:layout_constraintTop_toTopOf="@+id/etItemBarcode" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/etItemBarcode"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -61,10 +61,10 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/ivItemBarcode"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/etItemName" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/etItemDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -77,10 +77,10 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText3" />
+                app:layout_constraintTop_toBottomOf="@+id/etItemBarcode" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/etItemQuantity"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -90,10 +90,10 @@
                 android:inputType="number"
                 android:text="@{item.quantity + ``}"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/editText4"
+                app:layout_constraintEnd_toStartOf="@+id/etItemSafety"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText2" />
+                app:layout_constraintTop_toBottomOf="@+id/etItemDescription" />
 
             <ImageView
                 android:id="@+id/ivItemImage"
@@ -109,25 +109,25 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText5" />
+                app:layout_constraintTop_toBottomOf="@+id/etItemQuantity" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/etItemSafety"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/hint_item_notice"
                 android:inputType="number"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/editText5"
-                app:layout_constraintEnd_toStartOf="@+id/editText6"
+                app:layout_constraintBottom_toBottomOf="@+id/etItemQuantity"
+                app:layout_constraintEnd_toStartOf="@+id/etItemPrice"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/editText5"
-                app:layout_constraintTop_toTopOf="@+id/editText5"
+                app:layout_constraintStart_toEndOf="@+id/etItemQuantity"
+                app:layout_constraintTop_toTopOf="@+id/etItemQuantity"
                 app:layout_constraintVertical_bias="1.0" />
 
             <EditText
-                android:id="@+id/editText6"
+                android:id="@+id/etItemPrice"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -135,11 +135,11 @@
                 android:hint="@string/hint_item_price"
                 android:inputType="numberDecimal"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/editText4"
+                app:layout_constraintBottom_toBottomOf="@+id/etItemSafety"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/editText4"
-                app:layout_constraintTop_toTopOf="@+id/editText4" />
+                app:layout_constraintStart_toEndOf="@+id/etItemSafety"
+                app:layout_constraintTop_toTopOf="@+id/etItemSafety" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
