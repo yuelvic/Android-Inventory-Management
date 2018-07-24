@@ -6,6 +6,9 @@ import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
@@ -57,7 +60,7 @@ class AddItemFragment : BaseFragment() {
         if (ImagePicker.shouldHandle(requestCode, resultCode, data)) {
             val image = ImagePicker.getFirstImageOrNull(data)
             this.mItem.imageUrl = image.path
-            this.mBinding.item = this.mItem
+            this.mBinding.imageUrl = image.path
         } else {
             val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
             if (result != null) {
@@ -94,6 +97,7 @@ class AddItemFragment : BaseFragment() {
         if (this.mItem.name != "") {
             setTitle("Edit Item")
             this.mBinding.item = this.mItem
+            this.mBinding.imageUrl = this.mItem.imageUrl
         }
     }
 

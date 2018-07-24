@@ -38,6 +38,8 @@
     <string name="hint_employee_id">Employee Number</string>
     <string name="hint_employee_firstname">First Name</string>
     <string name="hint_employee_lastname">Last Name</string>
+    <string name="hint_employee_jobtitle">Job Title</string>
+    <string name="hint_employee_admin">Admin</string>
 
     <string name="hint_issue_search">Search item</string>
     <string name="hint_issue_employee">Select employee</string>

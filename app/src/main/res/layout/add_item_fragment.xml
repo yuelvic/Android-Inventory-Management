@@ -6,6 +6,9 @@
 
     <data>
         <variable
+            name="imageUrl"
+            type="String"/>
+        <variable
             name="item"
             type="io.chaman.im.data.entities.Item"/>
     </data>
@@ -106,8 +109,8 @@
                 android:layout_marginBottom="8dp"
                 android:scaleType="center"
                 android:src="@drawable/ic_add_photo"
-                android:contentDescription="@{item.imageUrl}"
-                app:imageFromUrl="@{item.imageUrl}"
+                android:contentDescription="@{imageUrl}"
+                app:imageFromUrl="@{imageUrl}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

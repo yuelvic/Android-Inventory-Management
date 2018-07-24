@@ -8,6 +8,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 
 open class BaseFragment: Fragment() {
 
+    private val TAG = BaseFragment::class.java.simpleName
+
     open fun configureBundle() {
 
     }
