@@ -52,8 +52,8 @@ class AddEmployeeFragment : BaseFragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (ImagePicker.shouldHandle(requestCode, resultCode, data)) {
             val image = ImagePicker.getFirstImageOrNull(data)
-            this.mEmployee.imageUrl = image.path
-//            this.mBinding.imageUrl = image.path
+//            this.mEmployee.imageUrl = image.path
+            this.mBinding.imageUrl = image.path
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }

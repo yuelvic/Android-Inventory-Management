@@ -18,6 +18,8 @@ data class Employee(
         var department: String = "",
         @ColumnInfo(name = "image_url")
         var imageUrl: String = "",
+        @ColumnInfo(name = "job_title")
+        var jobTitle: String = "",
         @ColumnInfo(name = "role")
         var role: String = ""
 )
