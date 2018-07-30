@@ -12,9 +12,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.gson.Gson
 import io.chaman.im.R
+import io.chaman.im.ReceiveItemFragment
 import io.chaman.im.data.entities.Request
 import io.chaman.im.databinding.ItemRequestBinding
-import io.chaman.im.ui.item.AddItemFragment
 import io.chaman.im.utils.ImageUtils
 
 class RequestAdapter(val context: Context?): RecyclerView.Adapter<RequestAdapter.RequestHolder>() {
@@ -53,8 +53,8 @@ class RequestAdapter(val context: Context?): RecyclerView.Adapter<RequestAdapter
 
     private fun createClickListener(request: Request): View.OnClickListener {
         val i = Gson().toJson(request)
-        val bundle = bundleOf(AddItemFragment.ARG_ITEM_ID to i)
-        return Navigation.createNavigateOnClickListener(R.id.action_requestFragment_to_addItemActivity, bundle)
+        val bundle = bundleOf(ReceiveItemFragment.ARG_ITEM_ID to i)
+        return Navigation.createNavigateOnClickListener(R.id.action_requestFragment_to_receiveItem, bundle)
     }
 
     class RequestHolder(private val binding: ItemRequestBinding) : RecyclerView.ViewHolder(binding.root) {

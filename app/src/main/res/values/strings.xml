@@ -24,6 +24,7 @@
     <string name="text_label_add_employee">Add Employee</string>
     <string name="text_label_reports">Reports</string>
     <string name="text_label_supply">Get Item</string>
+    <string name="text_label_receive">Receive Supply</string>
 
     <string name="text_item_quantity">Remaining Items</string>
     <string name="text_item_price">Total Price</string>
@@ -43,6 +44,8 @@
 
     <string name="hint_issue_search">Search item</string>
     <string name="hint_issue_employee">Select employee</string>
+
+    <string name="hint_receive_quantity">Received Quantity</string>
 
     <string-array name="text_department_array">
         <item>Management</item>

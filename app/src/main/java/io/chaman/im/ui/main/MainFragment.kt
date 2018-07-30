@@ -5,11 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
-import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : BaseFragment() {
 
@@ -26,12 +23,6 @@ class MainFragment : BaseFragment() {
 
     override fun configureViewModel() {
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
-    override fun configureUI() {
-        val navController = Navigation.findNavController(this.activity!!, R.id.admin_container)
-        NavigationUI.setupWithNavController(this.bottomNavigationBar, navController)
     }
 
 }
