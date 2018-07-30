@@ -6,9 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
+import io.chaman.im.databinding.ReportsFragmentBinding
+import io.chaman.im.ui.employee.EmployeeViewModel
+import io.chaman.im.ui.item.RequestViewModel
+import kotlinx.android.synthetic.main.reports_fragment.*
 import java.util.*
 
 
@@ -18,25 +23,46 @@ class ReportsFragment : BaseFragment(), DatePickerDialog.OnDateSetListener {
         fun newInstance() = ReportsFragment()
     }
 
-    private lateinit var viewModel: ReportsViewModel
+    private lateinit var employeeViewModel: EmployeeViewModel
+    private lateinit var requestViewModel: RequestViewModel
+    private lateinit var mBinding: ReportsFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.reports_fragment, container, false)
+        return configureDataBinding(inflater, container)
     }
 
     override fun onDateSet(p0: DatePicker?, p1: Int, p2: Int, p3: Int) {
 
     }
 
+    private fun configureDataBinding(inflater: LayoutInflater, container: ViewGroup?): View {
+        this.mBinding = DataBindingUtil.inflate(inflater, R.layout.reports_fragment, container, false)
+        return this.mBinding.root
+    }
+
     override fun configureViewModel() {
-        viewModel = ViewModelProviders.of(this).get(ReportsViewModel::class.java)
-        // TODO: Use the ViewModel
+        this.employeeViewModel = ViewModelProviders.of(this).get(EmployeeViewModel::class.java)
+        this.requestViewModel = ViewModelProviders.of(this).get(RequestViewModel::class.java)
+
+        updateEmployeeReports()
+        updateRequestReports()
     }
 
     override fun configureUI() {
         setTitle(getString(R.string.text_admin_dashboard))
-//        showDatePicker()
+    }
+
+    private fun updateEmployeeReports() {
+        this.employeeViewModel.count().observe(this, androidx.lifecycle.Observer {
+            this.tileReportEmployeeCount.setValue(it)
+        })
+    }
+
+    private fun updateRequestReports() {
+        this.requestViewModel.count().observe(this, androidx.lifecycle.Observer {
+            this.tileReportRequestCount.setValue(it)
+        })
     }
 
     private fun showDatePicker() {

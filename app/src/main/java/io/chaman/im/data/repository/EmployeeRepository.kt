@@ -11,15 +11,21 @@ class EmployeeRepository(application: Application) {
 
     var mEmployeeDao: EmployeeDao
     var mEmployees: LiveData<List<Employee>>
+    var mEmployeeCount: LiveData<Int>
 
     init {
         val db = EmployeeDatabase.getDatabase(application)
         this.mEmployeeDao = db!!.employeeDao()
         this.mEmployees = this.mEmployeeDao.getEmployees()
+        this.mEmployeeCount = this.mEmployeeDao.count()
     }
 
     fun getEmployees(): LiveData<List<Employee>> {
         return this.mEmployees
+    }
+
+    fun count(): LiveData<Int> {
+        return this.mEmployeeCount
     }
 
     fun add(employee: Employee) {

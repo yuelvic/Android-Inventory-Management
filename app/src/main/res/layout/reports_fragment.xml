@@ -3,12 +3,30 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <data></data>
+
+    <data>
+        <variable
+            name="employeeCount"
+            type="Integer"/>
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <io.chaman.im.ui.custom.TileReport
+            android:id="@+id/tileReportRequestCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/tileReport2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tileReport2"
+            app:tileReportLineColor="@color/color_flat_wetasphalt"
+            app:tileReportTitle="Requests"
+            app:tileReportValue="0" />
 
         <io.chaman.im.ui.custom.TileReport
             android:id="@+id/tileReport"
@@ -31,7 +49,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="4dp"
-            app:layout_constraintEnd_toStartOf="@+id/tileReport3"
+            app:layout_constraintEnd_toStartOf="@+id/tileReportEmployeeCount"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tileReport"
@@ -40,7 +58,7 @@
             app:tileReportValue="24" />
 
         <io.chaman.im.ui.custom.TileReport
-            android:id="@+id/tileReport3"
+            android:id="@+id/tileReportEmployeeCount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -52,7 +70,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tileReport"
             app:tileReportLineColor="@color/color_flat_carrot"
             app:tileReportTitle="Total Employees"
-            app:tileReportValue="15" />
+            app:tileReportValue="0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

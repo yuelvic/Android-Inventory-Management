@@ -8,6 +8,7 @@ import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import io.chaman.im.R
+import kotlinx.android.synthetic.main.reports_fragment.view.*
 import kotlinx.android.synthetic.main.tile_report.view.*
 
 
@@ -30,7 +31,7 @@ class TileReport: ConstraintLayout {
         set.match(view, this)
     }
 
-    fun configureAttributes(attrs: AttributeSet?) {
+    private fun configureAttributes(attrs: AttributeSet?) {
         val a = context.theme.obtainStyledAttributes(
                 attrs,
                 R.styleable.TileReport,
@@ -47,6 +48,10 @@ class TileReport: ConstraintLayout {
         } finally {
             a.recycle()
         }
+    }
+
+    fun setValue(value: Int) {
+        this.tvTileReportValue.text = Integer.toString(value)
     }
 
 }

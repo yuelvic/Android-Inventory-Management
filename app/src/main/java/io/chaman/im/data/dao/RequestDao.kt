@@ -13,6 +13,9 @@ interface RequestDao {
     @Query("SELECT * FROM request")
     fun getRequests(): LiveData<List<Request>>
 
+    @Query("SELECT COUNT(*) FROM request")
+    fun count(): LiveData<Int>
+
     @Insert
     fun add(request: Request)
 

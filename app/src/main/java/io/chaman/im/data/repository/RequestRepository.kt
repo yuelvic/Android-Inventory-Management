@@ -11,16 +11,20 @@ class RequestRepository(application: Application) {
 
     var mRequestDao: RequestDao
     var mRequests: LiveData<List<Request>>
+    var mRequestCount: LiveData<Int>
 
     init {
         val db = RequestDatabase.getDatabase(application)
         this.mRequestDao = db!!.requestDao()
         this.mRequests = this.mRequestDao.getRequests()
+        this.mRequestCount = this.mRequestDao.count()
     }
 
     fun getRequests(): LiveData<List<Request>> {
         return this.mRequests
     }
+
+    fun count() = this.mRequestCount
 
     fun add(request: Request) {
         doAsync {

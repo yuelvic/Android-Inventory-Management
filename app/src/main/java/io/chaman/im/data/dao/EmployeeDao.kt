@@ -15,4 +15,7 @@ interface EmployeeDao {
     @Insert
     fun add(employee: Employee)
 
+    @Query("SELECT COUNT(*) FROM employee")
+    fun count(): LiveData<Int>
+
 }

@@ -11,12 +11,16 @@ class RequestViewModel(application: Application) : AndroidViewModel(application)
 
     var mRequestRepository: RequestRepository = RequestRepository(application)
     var mRequests: LiveData<List<Request>>
+    var mRequestCount: LiveData<Int>
 
     init {
         this.mRequests = this.mRequestRepository.getRequests()
+        this.mRequestCount = this.mRequestRepository.count()
     }
 
     fun getRequests() = this.mRequests
+
+    fun count() = this.mRequestCount
 
     fun addRequest(binding: AddItemFragmentBinding) {
         val request = Request()
