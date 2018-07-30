@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/etReceiveQuantity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -38,12 +38,13 @@
             android:hint="@string/hint_receive_quantity"
             android:inputType="number"
             android:textSize="14sp"
+            android:text="@{request.quantity + ``}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/etReceiveBarcode"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -53,20 +54,20 @@
             android:hint="@string/hint_item_barcode"
             android:inputType="number"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView8"
+            app:layout_constraintEnd_toStartOf="@+id/ivReceiveBarcode"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/etReceiveQuantity" />
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/ivReceiveBarcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:src="@drawable/ic_barcode"
             android:tint="@color/color_alpha_black"
-            app:layout_constraintBottom_toBottomOf="@+id/editText3"
+            app:layout_constraintBottom_toBottomOf="@+id/etReceiveBarcode"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/editText3" />
+            app:layout_constraintTop_toTopOf="@+id/etReceiveBarcode" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

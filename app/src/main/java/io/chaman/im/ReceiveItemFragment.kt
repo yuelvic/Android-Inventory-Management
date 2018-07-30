@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.Navigation
 import com.google.gson.Gson
 import io.chaman.im.data.entities.Request
 import io.chaman.im.databinding.ReceiveItemFragmentBinding
@@ -33,6 +32,16 @@ class ReceiveItemFragment : BaseFragment() {
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
         inflater.inflate(R.menu.check_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.check -> {
+                this.viewModel.addSupply(this.mBinding, this.mRequest)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     private fun configureDataBinding(inflater: LayoutInflater, container: ViewGroup?): View {
