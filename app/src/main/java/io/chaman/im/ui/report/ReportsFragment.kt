@@ -72,7 +72,7 @@ class ReportsFragment : BaseFragment(), DatePickerDialog.OnDateSetListener {
 
     private fun updateSupplyReports() {
         this.supplyViewModel.count().observe(this, androidx.lifecycle.Observer {
-            
+            this.tileReportSupplyCount.setValue(it)
         })
     }
 

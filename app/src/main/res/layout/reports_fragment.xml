@@ -29,7 +29,7 @@
             app:tileReportValue="0" />
 
         <io.chaman.im.ui.custom.TileReport
-            android:id="@+id/tileReport"
+            android:id="@+id/tileReportSupplyCount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -52,7 +52,7 @@
             app:layout_constraintEnd_toStartOf="@+id/tileReportEmployeeCount"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tileReport"
+            app:layout_constraintTop_toBottomOf="@+id/tileReportSupplyCount"
             app:tileReportLineColor="@color/color_flat_peterriver"
             app:tileReportTitle="Total Issuances"
             app:tileReportValue="24" />
@@ -67,7 +67,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tileReport2"
-            app:layout_constraintTop_toBottomOf="@+id/tileReport"
+            app:layout_constraintTop_toBottomOf="@+id/tileReportSupplyCount"
             app:tileReportLineColor="@color/color_flat_carrot"
             app:tileReportTitle="Total Employees"
             app:tileReportValue="0" />

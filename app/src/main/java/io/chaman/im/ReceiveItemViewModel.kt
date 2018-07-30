@@ -37,4 +37,8 @@ class ReceiveItemViewModel(application: Application) : AndroidViewModel(applicat
         this.mSupplyRepository.add(supply)
     }
 
+    fun deleteSupply() {
+
+    }
+
 }
