@@ -4,10 +4,11 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.ui.NavigationUI
 import com.google.gson.Gson
+import com.xrojan.rxbus.RxBus
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
+import io.chaman.im.data.entities.Barcode
 import io.chaman.im.data.entities.Request
 import io.chaman.im.databinding.ReceiveItemFragmentBinding
 
@@ -50,6 +51,16 @@ class ReceiveItemFragment : BaseFragment() {
         }
     }
 
+    override fun configureEvent() {
+        RxBus.subscribe<Barcode>(this) {
+            this.mBinding.barcode = it.code
+        }
+    }
+
+    override fun onReleaseEvent() {
+        RxBus.unsubscribe(this)
+    }
+
     private fun configureDataBinding(inflater: LayoutInflater, container: ViewGroup?): View {
         this.mBinding = DataBindingUtil.inflate(inflater, R.layout.receive_item_fragment, container, false)
         return this.mBinding.root
@@ -68,8 +79,10 @@ class ReceiveItemFragment : BaseFragment() {
         }
     }
 
-    override fun configureUI() {
-
+    override fun configureBehavior() {
+        this.mBinding.ivReceiveBarcode.setOnClickListener {
+            openBarcodeScanner()
+        }
     }
 
 }

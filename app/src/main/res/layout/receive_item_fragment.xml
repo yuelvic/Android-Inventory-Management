@@ -6,6 +6,9 @@
 
     <data>
         <variable
+            name="barcode"
+            type="String"/>
+        <variable
             name="request"
             type="io.chaman.im.data.entities.Request"/>
     </data>
@@ -54,6 +57,7 @@
             android:hint="@string/hint_item_barcode"
             android:inputType="number"
             android:textSize="14sp"
+            android:text="@{barcode}"
             app:layout_constraintEnd_toStartOf="@+id/ivReceiveBarcode"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etReceiveQuantity" />

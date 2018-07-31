@@ -103,7 +103,7 @@ class AddItemFragment : BaseFragment() {
 
     override fun configureBehavior() {
         this.ivItemBarcode.setOnClickListener {
-            IntentIntegrator(activity).initiateScan()
+            openBarcodeScanner()
         }
 
         this.ivItemImage.setOnClickListener {
