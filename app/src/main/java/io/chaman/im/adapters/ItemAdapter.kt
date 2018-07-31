@@ -16,6 +16,7 @@ import io.chaman.im.data.entities.Item
 import io.chaman.im.data.entities.Supply
 import io.chaman.im.databinding.ItemGoodBinding
 import io.chaman.im.ui.item.AddItemFragment
+import io.chaman.im.utils.ImageUtils
 
 class ItemAdapter(val context: Context): RecyclerView.Adapter<ItemAdapter.ItemHolder>() {
 
@@ -34,6 +35,7 @@ class ItemAdapter(val context: Context): RecyclerView.Adapter<ItemAdapter.ItemHo
         val data = this.dataSet[position]
 
         Glide.with(context)
+                .setDefaultRequestOptions(ImageUtils.getRequestConfig(R.drawable.ic_item, R.drawable.ic_item))
                 .load(data.imageUrl)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(holder.ivItemImage)
@@ -45,7 +47,14 @@ class ItemAdapter(val context: Context): RecyclerView.Adapter<ItemAdapter.ItemHo
     }
 
     fun setSupplies(items: List<Supply>) {
+        this.dataSet.clear()
         this.dataSet.addAll(items)
+        notifyDataSetChanged()
+    }
+
+    fun setSupplies(item: Supply) {
+        this.dataSet.clear()
+        this.dataSet.add(item)
         notifyDataSetChanged()
     }
 

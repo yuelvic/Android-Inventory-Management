@@ -6,9 +6,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.xrojan.rxbus.RxBus
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
 import io.chaman.im.adapters.ItemAdapter
+import io.chaman.im.data.entities.Barcode
 import io.chaman.im.databinding.ItemFragmentBinding
 import kotlinx.android.synthetic.main.item_fragment.*
 
@@ -22,7 +24,6 @@ class ItemFragment : BaseFragment() {
         fun newInstance() = ItemFragment()
     }
 
-//    private lateinit var viewModel: ItemViewModel
     private lateinit var supplyViewModel: SupplyViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -36,19 +37,36 @@ class ItemFragment : BaseFragment() {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.barcode -> {
+                openBarcodeScanner()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun configureEvent() {
+        RxBus.subscribe<Barcode>(this) {
+            supplyViewModel.getSupply(it.code).observe(this, Observer {
+                if (it != null) {
+                    mItemAdapter.setSupplies(it)
+                }
+            })
+        }
+    }
+
+    override fun onReleaseEvent() {
+        RxBus.unsubscribe(this)
+    }
+
     private fun configureDataBinding(inflater: LayoutInflater, container: ViewGroup?): View? {
         this.binding = DataBindingUtil.inflate(inflater, R.layout.item_fragment, container, false)
         return binding.root
     }
 
     override fun configureViewModel() {
-//        viewModel = ViewModelProviders.of(this).get(ItemViewModel::class.java)
-//        viewModel.getItems().observe(this, Observer {
-//            if (it != null) {
-//                mItemAdapter.setSupplies(it)
-//            }
-//        })
-
         supplyViewModel = ViewModelProviders.of(this).get(SupplyViewModel::class.java)
         supplyViewModel.getSupplies().observe(this, Observer {
             if (it != null) {

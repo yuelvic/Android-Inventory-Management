@@ -2,19 +2,11 @@ package io.chaman.im.ui.item
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.*
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
 import com.esafirm.imagepicker.features.ImagePicker
 import com.google.gson.Gson
-import com.google.zxing.integration.android.IntentIntegrator
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
 import io.chaman.im.data.entities.Item
@@ -61,15 +53,6 @@ class AddItemFragment : BaseFragment() {
             val image = ImagePicker.getFirstImageOrNull(data)
             this.mItem.imageUrl = image.path
             this.mBinding.imageUrl = image.path
-        } else {
-            val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-            if (result != null) {
-                if (result.contents != null) {
-                    Log.d(TAG, result.contents)
-                }
-            } else {
-                super.onActivityResult(requestCode, resultCode, data)
-            }
         }
     }
 

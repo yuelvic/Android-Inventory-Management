@@ -25,6 +25,10 @@ class SupplyViewModel(application: Application) : AndroidViewModel(application) 
         return this.mSupplyRepository.getSupply(supplyId)
     }
 
+    fun getSupply(barcode: String): LiveData<Supply> {
+        return this.mSupplyRepository.getSupply(barcode)
+    }
+
     fun count() = this.mSupplyCount
 
     fun addSupply(binding: ReceiveItemFragmentBinding, request: Request) {

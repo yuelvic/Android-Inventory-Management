@@ -26,6 +26,10 @@ class SupplyRepository(application: Application) {
         return this.mSupplyDao.getSupply(supplyId)
     }
 
+    fun getSupply(barcode: String): LiveData<Supply> {
+        return this.mSupplyDao.getSupply(barcode)
+    }
+
     fun count() = this.mSupplyCount
 
     fun add(supply: Supply) {
