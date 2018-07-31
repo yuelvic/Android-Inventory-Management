@@ -1,10 +1,12 @@
-package io.chaman.im
+package io.chaman.im.ui.item
 
 import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.google.gson.Gson
+import io.chaman.im.BaseFragment
+import io.chaman.im.R
 import io.chaman.im.data.entities.Request
 import io.chaman.im.databinding.ReceiveItemFragmentBinding
 
@@ -18,7 +20,7 @@ class ReceiveItemFragment : BaseFragment() {
         fun newInstance() = ReceiveItemFragment()
     }
 
-    private lateinit var viewModel: ReceiveItemViewModel
+    private lateinit var viewModel: SupplyViewModel
     private lateinit var mBinding: ReceiveItemFragmentBinding
 
     private lateinit var mRequest: Request
@@ -50,7 +52,7 @@ class ReceiveItemFragment : BaseFragment() {
     }
 
     override fun configureViewModel() {
-        viewModel = ViewModelProviders.of(this).get(ReceiveItemViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(SupplyViewModel::class.java)
     }
 
     override fun configureBundle() {

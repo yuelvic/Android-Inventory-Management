@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.gson.Gson
 import io.chaman.im.R
-import io.chaman.im.ReceiveItemFragment
+import io.chaman.im.ui.item.ReceiveItemFragment
 import io.chaman.im.data.entities.Request
 import io.chaman.im.databinding.ItemRequestBinding
 import io.chaman.im.utils.ImageUtils

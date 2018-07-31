@@ -44,7 +44,7 @@ class IssueFragment : BaseFragment() {
         viewModel = ViewModelProviders.of(this).get(ItemViewModel::class.java)
         viewModel.getItems().observe(this, Observer {
             if (it != null) {
-                mIssueAdapter.setItems(it)
+//                mIssueAdapter.setItems(it)
             }
         })
     }

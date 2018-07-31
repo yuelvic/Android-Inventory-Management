@@ -13,12 +13,13 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.gson.Gson
 import io.chaman.im.R
 import io.chaman.im.data.entities.Item
+import io.chaman.im.data.entities.Supply
 import io.chaman.im.databinding.ItemGoodBinding
 import io.chaman.im.ui.item.AddItemFragment
 
 class ItemAdapter(val context: Context): RecyclerView.Adapter<ItemAdapter.ItemHolder>() {
 
-    private var dataSet = ArrayList<Item>()
+    private var dataSet = ArrayList<Supply>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
         return ItemHolder(DataBindingUtil.inflate(LayoutInflater.from(context),
@@ -43,13 +44,13 @@ class ItemAdapter(val context: Context): RecyclerView.Adapter<ItemAdapter.ItemHo
         }
     }
 
-    fun setItems(items: List<Item>) {
+    fun setSupplies(items: List<Supply>) {
         this.dataSet.addAll(items)
         notifyDataSetChanged()
     }
 
-    private fun createClickListener(item: Item): View.OnClickListener {
-        val i = Gson().toJson(item)
+    private fun createClickListener(supply: Supply): View.OnClickListener {
+        val i = Gson().toJson(supply)
         val bundle = bundleOf(AddItemFragment.ARG_ITEM_ID to i)
         return Navigation.createNavigateOnClickListener(R.id.action_itemFragment_to_addItemActivity, bundle)
     }
@@ -58,7 +59,7 @@ class ItemAdapter(val context: Context): RecyclerView.Adapter<ItemAdapter.ItemHo
 
         val ivItemImage = binding.ivItemImage
 
-        fun bind(listener: View.OnClickListener, data: Item) {
+        fun bind(listener: View.OnClickListener, data: Supply) {
             this.binding.apply {
                 clickListener = listener
                 item = data

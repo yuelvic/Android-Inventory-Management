@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
-import io.chaman.im.ReceiveItemViewModel
 import io.chaman.im.databinding.ReportsFragmentBinding
 import io.chaman.im.ui.employee.EmployeeViewModel
 import io.chaman.im.ui.item.RequestViewModel
@@ -27,7 +26,7 @@ class ReportsFragment : BaseFragment(), DatePickerDialog.OnDateSetListener {
 
     private lateinit var employeeViewModel: EmployeeViewModel
     private lateinit var requestViewModel: RequestViewModel
-    private lateinit var supplyViewModel: ReceiveItemViewModel
+    private lateinit var supplyViewModel: SupplyViewModel
     private lateinit var mBinding: ReportsFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -47,7 +46,7 @@ class ReportsFragment : BaseFragment(), DatePickerDialog.OnDateSetListener {
     override fun configureViewModel() {
         this.employeeViewModel = ViewModelProviders.of(this).get(EmployeeViewModel::class.java)
         this.requestViewModel = ViewModelProviders.of(this).get(RequestViewModel::class.java)
-        this.supplyViewModel = ViewModelProviders.of(this).get(ReceiveItemViewModel::class.java)
+        this.supplyViewModel = ViewModelProviders.of(this).get(SupplyViewModel::class.java)
 
         updateEmployeeReports()
         updateRequestReports()

@@ -1,10 +1,7 @@
 package io.chaman.im.data.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import io.chaman.im.data.entities.Supply
 
 @Dao
@@ -13,8 +10,17 @@ interface SupplyDao {
     @Query("SELECT * FROM supply")
     fun getSupplies(): LiveData<List<Supply>>
 
+    @Query("SELECT * FROM supply WHERE id = :supplyId")
+    fun getSupply(supplyId: Int)
+
+    @Query("SELECT * FROM supply WHERE barcode = :supplyBarcode")
+    fun getSupply(supplyBarcode: String)
+
     @Query("SELECT COUNT(*) FROM supply")
     fun count(): LiveData<Int>
+
+    @Update
+    fun update(supply: Supply)
 
     @Insert
     fun add(supply: Supply)

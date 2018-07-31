@@ -23,5 +23,7 @@ data class Supply(
         @ColumnInfo(name = "price")
         var price: Double = 0.0,
         @ColumnInfo(name = "image_url")
-        var imageUrl: String = ""
+        var imageUrl: String = "",
+        @ColumnInfo(name = "barcode")
+        var barcode: String = ""
 )

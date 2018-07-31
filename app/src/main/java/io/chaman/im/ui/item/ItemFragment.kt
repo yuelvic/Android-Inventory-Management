@@ -22,7 +22,8 @@ class ItemFragment : BaseFragment() {
         fun newInstance() = ItemFragment()
     }
 
-    private lateinit var viewModel: ItemViewModel
+//    private lateinit var viewModel: ItemViewModel
+    private lateinit var supplyViewModel: SupplyViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -41,10 +42,17 @@ class ItemFragment : BaseFragment() {
     }
 
     override fun configureViewModel() {
-        viewModel = ViewModelProviders.of(this).get(ItemViewModel::class.java)
-        viewModel.getItems().observe(this, Observer {
+//        viewModel = ViewModelProviders.of(this).get(ItemViewModel::class.java)
+//        viewModel.getItems().observe(this, Observer {
+//            if (it != null) {
+//                mItemAdapter.setSupplies(it)
+//            }
+//        })
+
+        supplyViewModel = ViewModelProviders.of(this).get(SupplyViewModel::class.java)
+        supplyViewModel.getSupplies().observe(this, Observer {
             if (it != null) {
-                mItemAdapter.setItems(it)
+                mItemAdapter.setSupplies(it)
             }
         })
     }

@@ -110,6 +110,6 @@
     </fragment>
     <fragment
         android:id="@+id/receiveItem"
-        android:name="io.chaman.im.ReceiveItemFragment"
+        android:name="io.chaman.im.ui.item.ReceiveItemFragment"
         android:label="@string/text_label_receive" />
 </navigation>
