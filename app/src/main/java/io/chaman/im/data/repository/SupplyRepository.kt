@@ -22,11 +22,27 @@ class SupplyRepository(application: Application) {
 
     fun getSupplies() = this.mSupplies
 
+    fun getSupply(supplyId: Int): LiveData<Supply> {
+        return this.mSupplyDao.getSupply(supplyId)
+    }
+
     fun count() = this.mSupplyCount
 
     fun add(supply: Supply) {
         doAsync {
             mSupplyDao.add(supply)
+        }
+    }
+
+    fun update(supply: Supply) {
+        doAsync {
+            mSupplyDao.update(supply)
+        }
+    }
+
+    fun delete(supply: Supply) {
+        doAsync {
+            mSupplyDao.delete(supply)
         }
     }
 

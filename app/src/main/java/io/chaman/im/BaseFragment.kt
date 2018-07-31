@@ -37,6 +37,10 @@ open class BaseFragment: Fragment() {
         }
     }
 
+    protected fun pop() {
+        fragmentManager!!.popBackStack()
+    }
+
     /**
      * Sets toolbar title
      * @param title Title

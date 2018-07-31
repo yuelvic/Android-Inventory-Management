@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.ui.NavigationUI
 import com.google.gson.Gson
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
@@ -20,7 +21,8 @@ class ReceiveItemFragment : BaseFragment() {
         fun newInstance() = ReceiveItemFragment()
     }
 
-    private lateinit var viewModel: SupplyViewModel
+    private lateinit var supplyViewModel: SupplyViewModel
+    private lateinit var requestViewModel: RequestViewModel
     private lateinit var mBinding: ReceiveItemFragmentBinding
 
     private lateinit var mRequest: Request
@@ -39,7 +41,9 @@ class ReceiveItemFragment : BaseFragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.check -> {
-                this.viewModel.addSupply(this.mBinding, this.mRequest)
+                this.supplyViewModel.addSupply(this.mBinding, this.mRequest)
+                this.requestViewModel.delete(this.mRequest)
+                pop()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -52,7 +56,8 @@ class ReceiveItemFragment : BaseFragment() {
     }
 
     override fun configureViewModel() {
-        viewModel = ViewModelProviders.of(this).get(SupplyViewModel::class.java)
+        supplyViewModel = ViewModelProviders.of(this).get(SupplyViewModel::class.java)
+        requestViewModel = ViewModelProviders.of(this).get(RequestViewModel::class.java)
     }
 
     override fun configureBundle() {

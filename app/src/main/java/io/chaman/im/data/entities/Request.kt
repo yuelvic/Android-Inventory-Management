@@ -8,6 +8,8 @@ import androidx.room.PrimaryKey
 data class Request(
         @PrimaryKey(autoGenerate = true)
         var id: Int = 0,
+        @ColumnInfo(name = "supply_id")
+        var supplyId: Int = 0,
         @ColumnInfo(name = "employee_id")
         var employeeId: Int = 0,
         @ColumnInfo(name = "name")

@@ -21,24 +21,44 @@ class SupplyViewModel(application: Application) : AndroidViewModel(application) 
 
     fun getSupplies() = this.mSupplies
 
+    fun getSupply(supplyId: Int): LiveData<Supply> {
+        return this.mSupplyRepository.getSupply(supplyId)
+    }
+
     fun count() = this.mSupplyCount
 
     fun addSupply(binding: ReceiveItemFragmentBinding, request: Request) {
-        val supply = Supply()
-        supply.name = request.name
-        supply.employeeId = request.employeeId
-        supply.lastRequested = request.lastRequested
-        supply.quantity = request.quantity
-        supply.unit = request.unit
-        supply.safetyStock = request.safetyStock
-        supply.price = request.price
-        supply.imageUrl = request.imageUrl
+        if (hasExistingSupply(request.supplyId)) {
+            val supply = getSupply(request.supplyId).value
+            supply!!.quantity += request.quantity
+            update(supply!!)
+        } else {
+            val supply = Supply()
+            supply.name = request.name
+            supply.employeeId = request.employeeId
+            supply.lastRequested = request.lastRequested
+            supply.quantity = request.requested
+            supply.unit = request.unit
+            supply.safetyStock = request.safetyStock
+            supply.price = request.price
+            supply.imageUrl = request.imageUrl
+            supply.barcode = binding.etReceiveBarcode.text.toString()
 
-        this.mSupplyRepository.add(supply)
+            this.mSupplyRepository.add(supply)
+        }
     }
 
-    fun deleteSupply() {
+    fun update(supply: Supply) {
+        this.mSupplyRepository.update(supply)
+    }
 
+    fun delete(supply: Supply) {
+        this.mSupplyRepository.delete(supply)
+    }
+
+    fun hasExistingSupply(supplyId: Int): Boolean {
+        val supply = getSupply(supplyId)
+        return supply.value != null
     }
 
 }

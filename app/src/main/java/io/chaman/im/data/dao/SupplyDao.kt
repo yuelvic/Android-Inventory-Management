@@ -11,10 +11,10 @@ interface SupplyDao {
     fun getSupplies(): LiveData<List<Supply>>
 
     @Query("SELECT * FROM supply WHERE id = :supplyId")
-    fun getSupply(supplyId: Int)
+    fun getSupply(supplyId: Int): LiveData<Supply>
 
     @Query("SELECT * FROM supply WHERE barcode = :supplyBarcode")
-    fun getSupply(supplyBarcode: String)
+    fun getSupply(supplyBarcode: String): LiveData<Supply>
 
     @Query("SELECT COUNT(*) FROM supply")
     fun count(): LiveData<Int>
