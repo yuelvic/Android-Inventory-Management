@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import io.chaman.im.data.entities.Employee
 import io.chaman.im.data.repository.EmployeeRepository
 import io.chaman.im.databinding.AddEmployeeFragmentBinding
+import io.chaman.im.utils.ContentUtils
 
 class AddEmployeeViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -20,11 +21,11 @@ class AddEmployeeViewModel(application: Application) : AndroidViewModel(applicat
 
     fun addEmployee(binding: AddEmployeeFragmentBinding) {
         val employee = Employee()
-        employee.employeeNumber = Integer.parseInt(binding.etEmployeeNumber.text.toString())
-        employee.firstName = binding.etEmployeeFirst.text.toString()
-        employee.lastName = binding.etEmployeeSecond.text.toString()
+        employee.employeeNumber = ContentUtils.getInt(binding.etEmployeeNumber, 0)
+        employee.firstName = ContentUtils.getString(binding.etEmployeeFirst, "John")
+        employee.lastName = ContentUtils.getString(binding.etEmployeeSecond, "Doe")
         employee.department = binding.spnEmployeeDepartment.selectedItem.toString()
-        employee.imageUrl = binding.ivEmployeeImage.contentDescription.toString()
+        employee.imageUrl = ContentUtils.getString(binding.ivEmployeeImage, "")
         if (binding.cbEmployeeRole.isChecked) {
             employee.role = "Admin"
         } else {
