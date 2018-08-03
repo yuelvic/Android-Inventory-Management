@@ -8,9 +8,9 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
-import io.chaman.im.adapters.IssueAdapter
+import io.chaman.im.adapters.ItemAdapter
 import io.chaman.im.databinding.IssueFragmentBinding
-import io.chaman.im.ui.item.ItemViewModel
+import io.chaman.im.ui.item.SupplyViewModel
 import kotlinx.android.synthetic.main.issue_fragment.*
 
 
@@ -21,8 +21,8 @@ class IssueFragment : BaseFragment() {
     }
 
     private lateinit var binding: IssueFragmentBinding
-    private lateinit var viewModel: ItemViewModel
-    private lateinit var mIssueAdapter: IssueAdapter
+    private lateinit var viewModel: SupplyViewModel
+    private lateinit var mIssueAdapter: ItemAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -41,16 +41,17 @@ class IssueFragment : BaseFragment() {
     }
 
     override fun configureViewModel() {
-        viewModel = ViewModelProviders.of(this).get(ItemViewModel::class.java)
-        viewModel.getItems().observe(this, Observer {
+        viewModel = ViewModelProviders.of(this).get(SupplyViewModel::class.java)
+        viewModel.getSupplies().observe(this, Observer {
             if (it != null) {
-//                mIssueAdapter.setItems(it)
+                mIssueAdapter.setSupplies(it)
             }
         })
     }
 
     override fun configureUI() {
-        this.mIssueAdapter = IssueAdapter(this.context!!)
+        this.mIssueAdapter = ItemAdapter(this.context!!)
+        this.mIssueAdapter.toIssue(true)
         this.rvIssue.adapter = mIssueAdapter
         this.rvIssue.layoutManager = LinearLayoutManager(context)
     }

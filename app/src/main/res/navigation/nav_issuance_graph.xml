@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_issuance_graph"
+    app:startDestination="@id/issueFragment2">
+
+    <fragment
+        android:id="@+id/issueFragment2"
+        android:name="io.chaman.im.ui.issue.IssueFragment"
+        android:label="IssueFragment" >
+        <action
+            android:id="@+id/action_issueFragment2_to_supplyActivity2"
+            app:destination="@id/supplyActivity2" />
+    </fragment>
+    <activity
+        android:id="@+id/supplyActivity2"
+        android:name="io.chaman.im.SupplyActivity"
+        android:label="SupplyActivity" />
+</navigation>

@@ -21,6 +21,7 @@ import io.chaman.im.utils.ImageUtils
 class ItemAdapter(val context: Context): RecyclerView.Adapter<ItemAdapter.ItemHolder>() {
 
     private var dataSet = ArrayList<Supply>()
+    private var toIssue = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
         return ItemHolder(DataBindingUtil.inflate(LayoutInflater.from(context),
@@ -58,9 +59,14 @@ class ItemAdapter(val context: Context): RecyclerView.Adapter<ItemAdapter.ItemHo
         notifyDataSetChanged()
     }
 
+    fun toIssue(toIssue: Boolean) {
+        this.toIssue = toIssue
+    }
+
     private fun createClickListener(supply: Supply): View.OnClickListener {
         val i = Gson().toJson(supply)
         val bundle = bundleOf(AddItemFragment.ARG_ITEM_ID to i)
+        if (toIssue) return Navigation.createNavigateOnClickListener(R.id.action_issueFragment2_to_supplyActivity2, bundle)
         return Navigation.createNavigateOnClickListener(R.id.action_itemFragment_to_addItemActivity, bundle)
     }
 
