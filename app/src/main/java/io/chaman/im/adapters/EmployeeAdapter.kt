@@ -11,14 +11,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.gson.Gson
+import com.xrojan.rxbus.RxBus
 import io.chaman.im.R
 import io.chaman.im.data.entities.Employee
 import io.chaman.im.databinding.ItemEmployeeBinding
 import io.chaman.im.ui.employee.EmployeeDetailsFragment
+import org.jetbrains.anko.custom.ankoView
 
 class EmployeeAdapter(val context: Context?): RecyclerView.Adapter<EmployeeAdapter.EmployeeHolder>() {
 
     private val dataSet = ArrayList<Employee>()
+    private var showEmployeeDetailsOnClick = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmployeeHolder {
         return EmployeeHolder(DataBindingUtil.inflate(LayoutInflater.from(context),
@@ -43,6 +46,10 @@ class EmployeeAdapter(val context: Context?): RecyclerView.Adapter<EmployeeAdapt
         }
     }
 
+    fun showEmployeeDetailsOnClick(show: Boolean) {
+        this.showEmployeeDetailsOnClick = show
+    }
+
     fun setEmployees(employees: List<Employee>) {
         this.dataSet.clear()
         this.dataSet += employees
@@ -52,6 +59,13 @@ class EmployeeAdapter(val context: Context?): RecyclerView.Adapter<EmployeeAdapt
     private fun createClickListener(employee: Employee): View.OnClickListener {
         val e = Gson().toJson(employee)
         val bundle = bundleOf(EmployeeDetailsFragment.ARG_ITEM_ID to e)
+
+        if (!showEmployeeDetailsOnClick) {
+            return View.OnClickListener {
+                RxBus.post(employee)
+            }
+        }
+
         return Navigation.createNavigateOnClickListener(
                 R.id.action_employeeFragment_to_employeeDetailsActivity, bundle)
     }

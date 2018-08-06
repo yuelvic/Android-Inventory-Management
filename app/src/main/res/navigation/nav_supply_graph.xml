@@ -6,5 +6,18 @@
     <fragment
         android:id="@+id/supplyFragment"
         android:name="io.chaman.im.ui.item.SupplyFragment"
-        android:label="SupplyFragment" ></fragment>
+        android:label="@string/text_label_supply">
+        <action
+            android:id="@+id/action_supplyFragment_to_employeeFragment3"
+            app:destination="@id/employeeFragment3"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@+id/supplyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeFragment3"
+        android:name="io.chaman.im.ui.employee.EmployeeFragment"
+        android:label="@string/text_label_employee" />
 </navigation>

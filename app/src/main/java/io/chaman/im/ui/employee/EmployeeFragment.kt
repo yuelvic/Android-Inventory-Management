@@ -50,9 +50,8 @@ class EmployeeFragment : BaseFragment() {
     }
 
     override fun configureUI() {
-        setTitle(getString(R.string.text_admin_employee))
-
         this.mEmployeeAdapter = EmployeeAdapter(context)
+        this.mEmployeeAdapter.showEmployeeDetailsOnClick(false)
         this.rvEmployee.adapter = this.mEmployeeAdapter
         this.rvEmployee.layoutManager = GridLayoutManager(context, 2,
                 GridLayoutManager.VERTICAL, false)

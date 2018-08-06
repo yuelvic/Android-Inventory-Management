@@ -1,15 +1,19 @@
 package io.chaman.im.ui.item
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
+import com.xrojan.rxbus.RxBus
 import io.chaman.im.BaseFragment
 import io.chaman.im.R
+import io.chaman.im.data.entities.Employee
 import io.chaman.im.data.entities.Item
 import io.chaman.im.databinding.SupplyFragmentBinding
 import kotlinx.android.synthetic.main.supply_fragment.*
@@ -18,6 +22,7 @@ class SupplyFragment : BaseFragment() {
 
     companion object {
         const val ARG_ITEM_ID = "item_id"
+        val TAG = SupplyFragment::class.java.simpleName
 
         fun newInstance() = SupplyFragment()
     }
@@ -39,7 +44,6 @@ class SupplyFragment : BaseFragment() {
 
     override fun configureViewModel() {
         viewModel = ViewModelProviders.of(this).get(SupplyViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
     override fun configureBundle() {
@@ -50,6 +54,10 @@ class SupplyFragment : BaseFragment() {
     override fun configureUI() {
         this.binding.item = this.mItem
 
+        setTitle(this.mItem.name)
+
+        this.tileSupplyRemaining.setValue(this.mItem.quantity)
+
         Glide.with(this.context!!)
                 .load(this.mItem.imageUrl)
                 .into(this.ivSupplyImage)
@@ -57,8 +65,18 @@ class SupplyFragment : BaseFragment() {
 
     override fun configureBehavior() {
         this.tvSupplyEmployee.setOnClickListener {
-
+            navigate(R.id.action_supplyFragment_to_employeeFragment3)
         }
+    }
+
+    override fun configureEvent() {
+        RxBus.subscribe<Employee>(this) {
+            Log.d(TAG, it.firstName)
+        }
+    }
+
+    override fun onReleaseEvent() {
+        RxBus.unsubscribe(this)
     }
 
 }

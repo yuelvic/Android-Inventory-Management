@@ -6,6 +6,9 @@
 
     <data>
         <variable
+            name="imageUrl"
+            type="String"/>
+        <variable
             name="item"
             type="io.chaman.im.data.entities.Item"/>
     </data>
@@ -21,6 +24,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
+            app:imageFromUrl="@{imageUrl}"
             app:layout_constraintDimensionRatio="w,9:16"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="PHP 40.00"
+            android:text="@{`P` + item.price}"
             app:layout_constraintBottom_toBottomOf="@+id/counterView"
             app:layout_constraintEnd_toStartOf="@+id/button"
             app:layout_constraintTop_toTopOf="@+id/counterView" />
@@ -104,7 +108,7 @@
             android:layout_marginTop="24dp"
             android:text="@string/hint_issue_employee"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tileReport5" />
+            app:layout_constraintTop_toBottomOf="@+id/tileSupplyRemaining" />
 
         <ImageView
             android:id="@+id/imageView6"
@@ -118,13 +122,13 @@
             app:layout_constraintTop_toTopOf="@+id/tvSupplyEmployee" />
 
         <io.chaman.im.ui.custom.TileReport
-            android:id="@+id/tileReport5"
+            android:id="@+id/tileSupplyRemaining"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="4dp"
-            app:layout_constraintEnd_toStartOf="@+id/tileReport4"
+            app:layout_constraintEnd_toStartOf="@+id/tileSupplyPrice"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider"
@@ -133,7 +137,7 @@
             app:tileReportValue="24" />
 
         <io.chaman.im.ui.custom.TileReport
-            android:id="@+id/tileReport4"
+            android:id="@+id/tileSupplyPrice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -141,7 +145,7 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tileReport5"
+            app:layout_constraintStart_toEndOf="@+id/tileSupplyRemaining"
             app:layout_constraintTop_toBottomOf="@+id/divider"
             app:tileReportLineColor="@color/color_flat_peterriver"
             app:tileReportTitle="Price"
