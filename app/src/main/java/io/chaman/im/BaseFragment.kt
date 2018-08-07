@@ -79,16 +79,20 @@ open class BaseFragment: Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        configureEvent()
         configureViewModel()
         configureBundle()
         configureUI()
         configureBehavior()
     }
 
-    override fun onDestroyView() {
+    override fun onResume() {
+        super.onResume()
+        configureEvent()
+    }
+
+    override fun onPause() {
         onReleaseEvent()
-        super.onDestroyView()
+        super.onPause()
     }
 
 }

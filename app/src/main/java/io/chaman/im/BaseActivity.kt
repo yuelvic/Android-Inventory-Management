@@ -6,6 +6,18 @@ import androidx.appcompat.widget.Toolbar
 
 open class BaseActivity: AppCompatActivity() {
 
+    open fun configureNavController() {
+
+    }
+
+    open fun configureEvent() {
+
+    }
+
+    open fun onReleaseEvent() {
+
+    }
+
     open fun configureBundle() {
 
     }
@@ -36,6 +48,8 @@ open class BaseActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         configureDataBinding(savedInstanceState)
+        configureNavController()
+        configureEvent()
     }
 
     override fun onStart() {
@@ -44,6 +58,11 @@ open class BaseActivity: AppCompatActivity() {
         configureBundle()
         configureUI()
         configureBehavior()
+    }
+
+    override fun onDestroy() {
+        onReleaseEvent()
+        super.onDestroy()
     }
 
 }

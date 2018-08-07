@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.xrojan.rxbus.RxBus
@@ -71,7 +70,7 @@ class SupplyFragment : BaseFragment() {
 
     override fun configureEvent() {
         RxBus.subscribe<Employee>(this) {
-            Log.d(TAG, it.firstName)
+            this.tvSupplyEmployee.text = it.firstName + " " + it.lastName
         }
     }
 
