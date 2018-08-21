@@ -24,13 +24,16 @@
         app:sc_tint_color="@color/color_flat_turquoise">
 
         <RadioButton
+            android:id="@+id/rbIntroEmployee"
             style="@style/RadioButton"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="Employee" />
 
         <RadioButton
             style="@style/RadioButton"
+            android:id="@+id/rbIntroAdmin"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Admin" />
@@ -38,7 +41,7 @@
     </info.hoang8f.android.segmented.SegmentedGroup>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnIntroLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
