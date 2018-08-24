@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/reportsFragment">
+    <!--<activity-->
+        <!--android:id="@+id/mainActivity"-->
+        <!--android:name="io.chaman.im.MainActivity"-->
+        <!--android:label="MainActivity" />-->
+    <!--<fragment-->
+        <!--android:id="@+id/mainFragment"-->
+        <!--android:name="io.chaman.im.ui.main.MainFragment"-->
+        <!--android:label="@string/text_drawer_admin"-->
+        <!--tools:layout="@layout/main_fragment">-->
+        <!--<action-->
+            <!--android:id="@+id/action_mainFragment_to_itemFragment"-->
+            <!--app:destination="@id/itemFragment"-->
+            <!--app:enterAnim="@anim/enter_from_right"-->
+            <!--app:exitAnim="@anim/exit_to_left"-->
+            <!--app:popEnterAnim="@anim/enter_from_left"-->
+            <!--app:popExitAnim="@anim/exit_to_right" />-->
+        <!--<action-->
+            <!--android:id="@+id/action_mainFragment_to_employeeFragment"-->
+            <!--app:destination="@id/employeeFragment"-->
+            <!--app:enterAnim="@anim/enter_from_right"-->
+            <!--app:exitAnim="@anim/exit_to_left"-->
+            <!--app:popEnterAnim="@anim/enter_from_left"-->
+            <!--app:popExitAnim="@anim/exit_to_right" />-->
+        <!--<action-->
+            <!--android:id="@+id/action_mainFragment_to_reportsFragment"-->
+            <!--app:destination="@id/reportsFragment"-->
+            <!--app:enterAnim="@anim/enter_from_right"-->
+            <!--app:exitAnim="@anim/exit_to_left"-->
+            <!--app:popEnterAnim="@anim/enter_from_left"-->
+            <!--app:popExitAnim="@anim/exit_to_right" />-->
+    <!--</fragment>-->
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="io.chaman.im.ui.item.ItemFragment"
+        android:label="@string/text_label_item"
+        tools:layout="@layout/item_fragment" >
+        <action
+            android:id="@+id/action_itemFragment_to_addItemActivity"
+            app:destination="@id/addItemActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/issueFragment"
+        android:name="io.chaman.im.ui.issue.IssueFragment"
+        android:label="@string/text_drawer_issue"
+        tools:layout="@layout/issue_fragment" >
+        <action
+            android:id="@+id/action_issueFragment_to_supplyActivity"
+            app:destination="@id/supplyActivity" />
+    </fragment>
+    <!--<fragment-->
+        <!--android:id="@+id/settingsFragment"-->
+        <!--android:name="io.chaman.im.ui.settings.SettingsFragment"-->
+        <!--android:label="@string/text_drawer_settings"-->
+        <!--tools:layout="@layout/settings_fragment" />-->
+    <activity
+        android:id="@+id/addItemActivity"
+        android:name="io.chaman.im.AddItemActivity"
+        android:label="AddItemActivity" />
+    <fragment
+        android:id="@+id/employeeFragment"
+        android:name="io.chaman.im.ui.employee.EmployeeFragment"
+        android:label="@string/text_label_employee"
+        tools:layout="@layout/employee_fragment" >
+        <action
+            android:id="@+id/action_employeeFragment_to_addEmployeeActivity"
+            app:destination="@id/addEmployeeActivity" />
+        <action
+            android:id="@+id/action_employeeFragment_to_employeeDetailsActivity"
+            app:destination="@id/employeeDetailsActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/addEmployeeActivity"
+        android:name="io.chaman.im.AddEmployeeActivity"
+        android:label="add_employee_activity"
+        tools:layout="@layout/add_employee_activity" />
+    <activity
+        android:id="@+id/employeeDetailsActivity"
+        android:name="io.chaman.im.EmployeeDetailsActivity"
+        android:label="employee_details_activity"
+        tools:layout="@layout/employee_details_activity" />
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="io.chaman.im.ui.report.ReportsFragment"
+        android:label="@string/text_label_reports" />
+    <activity
+        android:id="@+id/supplyActivity"
+        android:name="io.chaman.im.SupplyActivity"
+        android:label="@string/text_label_supply"
+        tools:layout="@layout/supply_activity" />
+    <fragment
+        android:id="@+id/requestFragment"
+        android:name="io.chaman.im.ui.item.RequestFragment"
+        android:label="@string/text_admin_request"
+        tools:layout="@layout/request_fragment" >
+        <action
+            android:id="@+id/action_requestFragment_to_addItemActivity"
+            app:destination="@id/addItemActivity" />
+        <action
+            android:id="@+id/action_requestFragment_to_receiveItem"
+            app:destination="@id/receiveItem"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/receiveItem"
+        android:name="io.chaman.im.ui.item.ReceiveItemFragment"
+        android:label="@string/text_label_receive" />
+</navigation>

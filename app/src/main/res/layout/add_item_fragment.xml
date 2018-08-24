@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="imageUrl"
+            type="String"/>
+        <variable
+            name="item"
+            type="io.chaman.im.data.entities.Item"/>
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/additem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.item.AddItemFragment">
+
+            <EditText
+                android:id="@+id/etItemName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:hint="@string/hint_item_name"
+                android:inputType="textPersonName"
+                android:text="@{item.name}"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tileItemQuantity" />
+
+            <ImageView
+                android:id="@+id/ivItemBarcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_barcode"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/etItemBarcode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/etItemBarcode" />
+
+            <EditText
+                android:id="@+id/etItemBarcode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:hint="@string/hint_item_barcode"
+                android:inputType="number"
+                android:text="@{item.barCode}"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/ivItemBarcode"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etItemName" />
+
+            <EditText
+                android:id="@+id/etItemDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:hint="@string/hint_item_description"
+                android:inputType="textPersonName"
+                android:text="@{item.description}"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etItemBarcode" />
+
+            <EditText
+                android:id="@+id/etItemQuantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/hint_item_quantity"
+                android:inputType="number"
+                android:text="@{item.quantity == 0 ? `` : item.quantity + ``}"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/etItemSafety"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etItemDescription" />
+
+            <ImageView
+                android:id="@+id/ivItemImage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_add_photo"
+                android:contentDescription="@{imageUrl}"
+                app:imageFromUrl="@{imageUrl}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etItemQuantity" />
+
+            <EditText
+                android:id="@+id/etItemSafety"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_item_notice"
+                android:inputType="number"
+                android:textSize="14sp"
+                android:text="@{item.safetyStock == 0 ? `` : item.safetyStock + ``}"
+                app:layout_constraintBottom_toBottomOf="@+id/etItemQuantity"
+                app:layout_constraintEnd_toStartOf="@+id/etItemPrice"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/etItemQuantity"
+                app:layout_constraintTop_toTopOf="@+id/etItemQuantity"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <EditText
+                android:id="@+id/etItemPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:hint="@string/hint_item_price"
+                android:inputType="numberDecimal"
+                android:textSize="14sp"
+                android:text="@{item.price == 0 ? `` : item.price + ``}"
+                app:layout_constraintBottom_toBottomOf="@+id/etItemSafety"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/etItemSafety"
+                app:layout_constraintTop_toTopOf="@+id/etItemSafety" />
+
+            <io.chaman.im.ui.custom.TileReport
+                android:id="@+id/tileItemQuantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/tileItemPrice"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tileReportLineColor="@color/color_flat_turquoise"
+                app:tileReportTitle="@string/text_item_quantity"
+                app:tileReportValue="0" />
+
+            <io.chaman.im.ui.custom.TileReport
+                android:id="@+id/tileItemPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tileItemQuantity"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tileReportLineColor="@color/color_flat_peterriver"
+                app:tileReportTitle="@string/text_item_price"
+                app:tileReportValue="0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

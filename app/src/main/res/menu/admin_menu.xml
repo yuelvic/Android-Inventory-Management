@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/reportsFragment"
+        android:icon="@drawable/ic_dashboard"
+
+        android:title="@string/text_admin_dashboard"/>
+    <item
+        android:id="@+id/itemFragment"
+        android:icon="@drawable/ic_item"
+        android:title="@string/text_admin_item" />
+    <item
+        android:id="@+id/employeeFragment"
+        android:icon="@drawable/ic_employee"
+        android:title="@string/text_admin_employee" />
+    <item
+        android:id="@+id/requestFragment"
+        android:icon="@drawable/ic_request"
+        android:title="@string/text_admin_request" />
+    <!--<item-->
+        <!--android:icon="@drawable/ic_report"-->
+        <!--android:title="@string/text_admin_report" />-->
+</menu>
